@@ -9,8 +9,9 @@ import {
     TransitionGroup,
     CSSTransition
 } from 'react-transition-group'
-import Index from './index/index'
+import Header from './index/header'
 import Home from './home/index'
+import UserLogin from './user/login/login'
 import '../assets/css/animate.min.css'
 import '../app.less'
 
@@ -30,11 +31,16 @@ export default (
             }}
         >
             <BrowserRouter>
+
                 <div className='appRouter'>
-                    <Switch>
-                        <Route path="/home" component={Home}/>
-                        <Route path="/" component={Index}/>
-                    </Switch>
+                    <Header></Header>
+
+                    <div className='container'>
+                        <Switch>
+                            <Route path="/home" component={Home}/>
+                            <Route path="/user-login" component={UserLogin}/>
+                        </Switch>
+                    </div>
                 </div>
             </BrowserRouter>
         </CSSTransition>
