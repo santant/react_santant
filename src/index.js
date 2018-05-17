@@ -1,8 +1,10 @@
 import React, {Component} from 'react'
 import ReactDOM from 'react-dom'
+import './index.less'
 import uuid from 'uuid'
 import Login from './components/user/login/login.js'
-import './index.less'
+import {Toast, Button} from 'antd-mobile';
+
 class App extends Component {
     state = {
         value: '',
@@ -24,9 +26,13 @@ class App extends Component {
             }
         ]
     }
+    btn(){
+        Toast.info('ok!')
+    }
     render() {
-        return(
+        return (
             <div>
+                <Button onClick={this.btn.bind(this)} type="warning">warning</Button>
                 <Login></Login>
             </div>
         )
