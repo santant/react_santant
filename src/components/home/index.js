@@ -1,7 +1,10 @@
-import React, {Component} from 'react'
-import {Toast, Button} from 'antd-mobile'
+import React from 'react'
+import {
+    Toast,
+    Button
+} from 'antd-mobile'
 
-class Login extends Component {
+class Login extends React.Component {
     btn() {
         Toast.info('这是home')
     }

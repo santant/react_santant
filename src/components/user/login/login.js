@@ -1,14 +1,12 @@
-import React, {
-    Component
-} from 'react'
+import React from 'react'
 import './user.less'
 import verifyURL1 from './images/verify01.png';
 import verifyURL2 from './images/verify02.png';
 
 
-class Login extends Component {
+class Login extends React.Component {
     render() {
-        return(
+        return (
             <div className='login'>
                 <div className="login-box">
                     <div className="login-title">
