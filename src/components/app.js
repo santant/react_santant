@@ -11,13 +11,20 @@ import {
 } from 'react-transition-group'
 import Header from './index/header'
 import Home from './home/index'
-import UserLogin from './user/login/login' //
-import LoginState from './loginState/loginState' // 登录状态
-import AddressList from './address/addressList/addressList' // 地址列表和展开
-import Assets from './assets/assets' // 资产中心
+
 import AddressErificationCode from './address/address_add/address_erification_code' // 资产中心
 
+import UserLogin from './user/login/login'
+
+import Verification from './user/login/verification'
+import Registered from './user/login/registered'
+import Findpwd from './user/login/findpwd'
+
+import LoginState from './loginState/loginState'
+import AddressList from './address/addressList/addressList'
+import Assets from './assets/assets'
 import 'antd-mobile/dist/antd-mobile.css'
+
 import '../assets/css/animate.min.css'
 import '../app.less'
 
@@ -40,7 +47,6 @@ export default (
 
                 <div className='appRouter'>
                     <Header></Header>
-
                     <div className='container'>
                         <Switch>
                             <Route path="/home" component={Home}/>
@@ -49,6 +55,9 @@ export default (
                             <Route path="/assets" component={Assets}/>
                             <Route path="/user-login" component={UserLogin}/>
                             <Route path="/addresserificationcode" component={AddressErificationCode}/>
+                            <Route path="/verification" component={Verification}/>
+                            <Route path="/registered" component={Registered}/>
+                            <Route path="/findpwd" component={Findpwd}/>
                         </Switch>
                     </div>
                 </div>

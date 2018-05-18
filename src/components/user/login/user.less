@@ -1,166 +1,301 @@
 @import "../../../assets/less/publicScss";
 .user {
-  color: red;
-  width: 200*@r;
-  font-size: 30*@r;
+    color: red;
+    width: 200*@r;
+    font-size: 30*@r;
 }
 
 .login {
-  width: 100%;
-  height: auto;
-  display: block;
-  overflow: hidden;
-  margin-top: 60*@r;
-  .login-box {
     width: 100%;
     height: auto;
     display: block;
     overflow: hidden;
-    background: #fff;
-    padding: 0 40*@r;
-    box-sizing: border-box;
-    .login-title {
-      font-size: 48*@r;
-      color: #273844;
-      padding: 50*@r 0;
-      box-sizing: border-box;
-      display: block;
-      overflow: hidden;
-    }
-    .login-form {
-      width: 100%;
-      height: auto;
-      display: block;
-      overflow: hidden;
-      padding: 0;
-      li {
-        position: relative;
+    margin-top: 60*@r;
+    .verification-box {
+        //      position: relative;
         width: 100%;
-        height: 80*@r;
-        border-bottom: 4*@r solid #ecf1f3;
+        height: 782*@r;
         display: block;
         overflow: hidden;
-        margin-bottom: 70*@r;
-        .login-regular-default,
-        .login-regular-active {
-          width: 100%;
-          height: 23*@r;
-          line-height: 23*@r;
-          display: block;
-          overflow: hidden;
-          font-size: 24*@r;
-        }
-        .login-regular-default {
-          color: #7291a1;
-        }
-        .login-regular-active {
-          color: #00b07c;
-        }
-        .login-box {
-          position: relative;
-          width: 100%;
-          height: 53*@r;
-          line-height: 53*@r;
-          display: block;
-          overflow: hidden;
-          .login-input {
-            position: absolute;
-            left: 0;
+        background: #fff;
+        padding: 0 40*@r;
+        box-sizing: border-box;
+        .verification-title {
             width: 100%;
-            height: 53*@r;
-            line-height: 53*@r;
+            font-size: 48*@r;
+            color: #273844;
+            padding: 50*@r 0;
+            box-sizing: border-box;
             display: block;
             overflow: hidden;
+        }
+        .verification-cont,
+        .verification-check-success,
+        .verification-check-wrong {
+            width: 100%;
+            height: auto;
+            display: block;
+            overflow: hidden;
+            border-bottom: 4*@r solid #ecf1f3;
+            overflow: hidden;
+            margin: 164*@r 0;
+            .verification-regular-none,
+            .verification-regular-default,
+            .verification-regular-active {
+                width: 100%;
+                height: 23*@r;
+                line-height: 23*@r;
+                display: block;
+                overflow: hidden;
+                font-size: 24*@r;
+                transition: opacity 0.3s linear 0.1s;
+                -moz-transition: opacity 0.3s linear 0.1s;
+                -webkit-transition: opacity 0.3s linear 0.1s;
+                -o-transition: opacity 0.3s linear 0.1s;
+            }
+            .verification-regular-none {
+                opacity: 0.01;
+            }
+            .verification-regular-default {
+                opacity: 1;
+                color: #7291a1;
+            }
+            .verification-regular-active {
+                opacity: 1;
+                color: #00b07c;
+            }
+            .verification-input {
+                width: 100%;
+                height: 53*@r;
+                line-height: 53*@r;
+                border: none;
+                outline: none;
+                font-size: 32*@r;
+                font-weight: bold;
+                color: #405e6e;
+            }
+        }
+        .verification-check-success {
+            border-bottom: 4*@r solid #00b07c;
+        }
+        .verification-check-wrong {
+            border-bottom: 4*@r solid #ff5353;
+        }
+        .verification-btn {
+            //          position: absolute;
+            //          bottom: 80*@r;
+            width: 100%;
+            height: 88*@r;
+            line-height: 88*@r;
+            display: block;
+            overflow: hidden;
+            text-align: center;
+            background: #a0aeb6;
+            color: #fff;
+            font-size: 32*@r;
+            font-weight: bold;
             border: none;
             outline: none;
+            margin-bottom: 80*@r;
+        }
+        .verification-btn-success {
+            background: #00b07c;
+        }
+    }
+    .login-cont-box {
+        width: 100%;
+        height: auto;
+        display: block;
+        overflow: hidden;
+        background: #fff;
+        padding: 0 40*@r;
+        box-sizing: border-box;
+        .login-title {
+            font-size: 48*@r;
+            color: #273844;
+            padding: 50*@r 0;
+            box-sizing: border-box;
+            display: block;
+            overflow: hidden;
+        }
+        .login-form {
+            width: 100%;
+            height: auto;
+            display: block;
+            padding: 0;
+            padding-bottom: 16*@r;
+            li {
+                position: relative;
+                width: 100%;
+                height: 80*@r;
+                border-bottom: 4*@r solid #ecf1f3;
+                display: block;
+                margin-bottom: 70*@r;
+                .login-regular-none,
+                .login-regular-default,
+                .login-regular-active,
+                .login-regular-wrong {
+                    width: 100%;
+                    height: 23*@r;
+                    line-height: 23*@r;
+                    display: block;
+                    overflow: hidden;
+                    font-size: 24*@r;
+                    transition: opacity 0.3s linear 0.1s;
+                    -moz-transition: opacity 0.3s linear 0.1s;
+                    -webkit-transition: opacity 0.3s linear 0.1s;
+                    -o-transition: opacity 0.3s linear 0.1s;
+                }
+                .login-regular-none {
+                    opacity: 0.01;
+                }
+                .login-regular-default {
+                    opacity: 1;
+                    color: #7291a1;
+                }
+                .login-regular-active {
+                    opacity: 1;
+                    color: #00b07c;
+                }
+                .login-regular-wrong{
+                    opacity: 1;
+                    color: #ff5353;
+                }
+                .login-box {
+                    position: relative;
+                    width: 100%;
+                    height: 53*@r;
+                    line-height: 53*@r;
+                    display: block;
+                    overflow: hidden;
+                    .login-input {
+                        position: absolute;
+                        left: 0;
+                        width: 100%;
+                        height: 53*@r;
+                        line-height: 53*@r;
+                        display: block;
+                        overflow: hidden;
+                        border: none;
+                        outline: none;
+                        font-size: 32*@r;
+                        font-weight: bold;
+                        color: #405e6e;
+                    }
+                    .forgot {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        text-align: right;
+                        font-size: 32*@r;
+                        color: #00b07c;
+                        font-weight: bold;
+                    }
+                }
+                .wrong {
+                    position: absolute;
+                    top: 84*@r;
+                    left: 0;
+                    width: 100%;
+                    height: 80*@r;
+                    z-index: 99;
+                    line-height: 80*@r;
+                    display: block;
+                    overflow: hidden;
+                    border: 2*@r solid #ff5353;
+                    color: #ff5353;
+                    font-size: 22*@r;
+                    background: #ecf1f3;
+                    box-sizing: border-box;
+                    text-indent: 15*@r;
+                    transition: opacity 0.3s linear 0.1s;
+                    -moz-transition: opacity 0.3s linear 0.1s;
+                    -webkit-transition: opacity 0.3s linear 0.1s;
+                    -o-transition: opacity 0.3s linear 0.1s;
+                }
+                .wrong-show{
+                    opacity: 1;
+                }
+                .wrong-hide{
+                    opacity: 0.01;
+                }
+            }
+            .check-success {
+                border-bottom: 4*@r solid #00b07c;
+            }
+            .check-wrong {
+                border-bottom: 4*@r solid #ff5353;
+            }
+        }
+        .login-verify {
+            position: relative;
+            width: 100%;
+            height: 110*@r;
+            line-height: 110*@r;
+            display: block;
+            overflow: hidden;
+            background: #f7f9fa;
+            text-align: center;
+            font-size: 28*@r;
+            margin-top: 10*@r;
+            margin-bottom: 50*@r;
+            color: #7a8e98;
+            .left {
+                position: absolute;
+                left: 36*@r;
+                top: 0;
+                width: 63*@r;
+                height: 61*@r;
+                margin: 25*@r 0;
+                img {
+                    max-width: 100%;
+                    max-height: 100%;
+                    display: block;
+                    overflow: hidden;
+                }
+            }
+            .right {
+                position: absolute;
+                right: 36*@r;
+                top: 0;
+                width: 63*@r;
+                height: 61*@r;
+                margin: 25*@r 0;
+                img {
+                    max-width: 100%;
+                    max-height: 100%;
+                    display: block;
+                    overflow: hidden;
+                }
+            }
+        }
+        .login-btn {
+            width: 100%;
+            height: 88*@r;
+            line-height: 88*@r;
+            display: block;
+            overflow: hidden;
+            text-align: center;
+            background: #a0aeb6;
+            color: #fff;
             font-size: 32*@r;
             font-weight: bold;
-            color: #405e6e;
-          }
-          .forgot {
-            position: absolute;
-            top: 0;
-            right: 0;
-            text-align: right;
-            font-size: 32*@r;
-            color: #00b07c;
-            font-weight: bold;
-          }
+            border: none;
+            outline: none;
+            margin-bottom: 80*@r;
         }
-      }
-      .change {
-        border-bottom: 4*@r solid #00b07c;
-      }
-    }
-    .login-verify {
-      position: relative;
-      width: 100%;
-      height: 110*@r;
-      line-height: 110*@r;
-      display: block;
-      overflow: hidden;
-      background: #f7f9fa;
-      text-align: center;
-      font-size: 28*@r;
-      margin-top: 10*@r;
-      margin-bottom: 50*@r;
-      color: #7a8e98;
-      .left {
-        position: absolute;
-        left: 36*@r;
-        top: 0;
-        width: 63*@r;
-        height: 61*@r;
-        margin: 25*@r 0;
-        img {
-          max-width: 100%;
-          max-height: 100%;
-          display: block;
-          overflow: hidden;
+        .login-btn-success {
+            background: #00b07c;
         }
-      }
-      .right {
-        position: absolute;
-        right: 36*@r;
-        top: 0;
-        width: 63*@r;
-        height: 61*@r;
-        margin: 25*@r 0;
-        img {
-          max-width: 100%;
-          max-height: 100%;
-          display: block;
-          overflow: hidden;
-        }
-      }
     }
-    .login-btn {
-      width: 100%;
-      height: 88*@r;
-      line-height: 88*@r;
-      display: block;
-      overflow: hidden;
-      text-align: center;
-      background: #a0aeb6;
-      color: #fff;
-      font-size: 32*@r;
-      font-weight: bold;
-      border: none;
-      outline: none;
-      margin-bottom: 80*@r;
+    .accoun {
+        width: 100%;
+        height: auto;
+        margin-top: 50*@r;
+        text-align: center;
+        font-size: 28*@r;
+        color: #00b07c;
+        display: block;
+        overflow: hidden;
     }
-    .login-btn-success {
-      background: #00b07c;
-    }
-  }
-  .accoun {
-    width: 100%;
-    height: auto;
-    margin-top: 50*@r;
-    text-align: center;
-    font-size: 28*@r;
-    color: #00b07c;
-    display: block;
-    overflow: hidden;
-  }
 }

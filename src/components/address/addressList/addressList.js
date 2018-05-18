@@ -1,5 +1,4 @@
 import React from 'react'
-import { Icon } from 'antd-mobile';
 import './addressList.less'
 
 class AddressList extends React.Component {
