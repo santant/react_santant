@@ -1,0 +1,76 @@
+@import "../../../assets/less/publicScss";
+
+#AddressErificationCode {
+  .address_title {
+    width: 680*@r;
+    margin: 0 auto;
+    font-size: 32*@r;
+    line-height: 100*@r;
+    height: 100*@r;
+    color: #7291a1;
+  }
+  .erification_box {
+    width: 680*@r;
+    margin: 35% auto;
+    position: relative;
+    overflow: hidden;
+    .password_tel {
+      position: absolute;
+      color: transparent;
+      width: 200%;
+      height: 100%;
+      opacity: 0;
+      z-index: 10;
+      left: -50%;
+    }
+    .erification {
+      width: 100%;
+      display: flex;
+      position: relative;
+      .password_number {
+
+        justify-content: left;
+        width: 105*@r;
+        line-height: 110*@r;
+      }
+    }
+    .erification2 {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      display: flex;
+      .password_number {
+        text-align: center;
+        color: #e3ecf0;
+        font-size: 48*@r;
+        width: 105*@r;
+        line-height: 110*@r;
+        margin-left: 8*@r;
+      }
+    }
+    li {
+      text-align: center;
+      color: #e3ecf0;
+      font-size: 48*@r;
+      width: 105*@r;
+      line-height: 110*@r;
+      height: 110*@r;
+      border-bottom: 3px solid #00b07c;
+      margin-left: 8*@r;
+    }
+  }
+  .confirm_btn {
+    width: 680*@r;
+    margin: 0 auto;
+    font-size: 32*@r;
+    line-height: 88*@r;
+    text-align: center;
+    color: #fff;
+    background: #00b07c;
+    position: fixed;
+    bottom: 100*@r;
+    left: 50*@r;
+  }
+}

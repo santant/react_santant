@@ -11,10 +11,12 @@ import {
 } from 'react-transition-group'
 import Header from './index/header'
 import Home from './home/index'
-import UserLogin from './user/login/login'
-import LoginState from './loginState/loginState'
-import AddressList from './address/addressList/addressList'
-import Assets from './assets/assets'
+import UserLogin from './user/login/login' //
+import LoginState from './loginState/loginState' // 登录状态
+import AddressList from './address/addressList/addressList' // 地址列表和展开
+import Assets from './assets/assets' // 资产中心
+import AddressErificationCode from './address/address_add/address_erification_code' // 资产中心
+
 import 'antd-mobile/dist/antd-mobile.css'
 import '../assets/css/animate.min.css'
 import '../app.less'
@@ -46,6 +48,7 @@ export default (
                             <Route path="/addressList" component={AddressList}/>
                             <Route path="/assets" component={Assets}/>
                             <Route path="/user-login" component={UserLogin}/>
+                            <Route path="/addresserificationcode" component={AddressErificationCode}/>
                         </Switch>
                     </div>
                 </div>

@@ -44,16 +44,6 @@ class AddressList extends React.Component {
                                 <img className='delete' src={require('./image/delete.png')} alt=""/>
                             </div>
                         </div>
-                        <div className='key_msg_box'>
-                            <span className='address_key'>1NKwUjGw1rqacC8yc1NKwUjGw1rqacC8yci1tdfJfGC4mk61pqzi1tdfJfGC4mk61pqz</span>
-                            <div className='key_msg'>
-                                <span className='key_text'>
-                                    小金的神操作无敌风火轮钱包地址
-                                </span>
-                                <img className='copy' src={require('./image/copy.png')} alt=""/>
-                                <img className='delete' src={require('./image/delete.png')} alt=""/>
-                            </div>
-                        </div>
                         <div className='address_add'>
                             + USDT address
                         </div>
