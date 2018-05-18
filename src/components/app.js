@@ -44,8 +44,6 @@ export default (
 
                 <div className='appRouter'>
                     <Header></Header>
-
-                    <div className='container'>
                         <Switch>
                             <Route path="/home" component={Home}/>
                             <Route path="/login-state" component={LoginState}/>
@@ -56,7 +54,6 @@ export default (
                             <Route path="/registered" component={Registered}/>
                             <Route path="/findpwd" component={Findpwd}/>
                         </Switch>
-                    </div>
                 </div>
             </BrowserRouter>
         </CSSTransition>

@@ -67,7 +67,7 @@ class Login extends React.Component {
         }
         render() {
                 return (
-                        <div className='login'>
+                        <div id="login" className='login'>
                <div className="login-cont-box ">
                     <div className="login-title">
                         Sign in to FCoin
