@@ -12,6 +12,9 @@ import {
 import Header from './index/header'
 import Home from './home/index'
 import UserLogin from './user/login/login'
+import Verification from './user/login/verification'
+import Registered from './user/login/registered'
+import Findpwd from './user/login/findpwd'
 import '../assets/css/animate.min.css'
 import '../app.less'
 
@@ -39,6 +42,9 @@ export default (
                         <Switch>
                             <Route path="/home" component={Home}/>
                             <Route path="/user-login" component={UserLogin}/>
+                            <Route path="/verification" component={Verification}/>
+                            <Route path="/registered" component={Registered}/>
+                            <Route path="/findpwd" component={Findpwd}/>
                         </Switch>
                     </div>
                 </div>
