@@ -5,32 +5,327 @@
     font-size: 30*@r;
 }
 
-.login {
+@wrongColor: #ff5353;
+.personal {
     width: 680*@r;
     height: auto;
     display: block;
     overflow: hidden;
-//  
     margin: 0 auto;
-    .verification-box {
-        //      position: relative;
+    background: #fff;
+    margin-top: 50*@r;
+    .personal-title {
+        position: relative;
         width: 680*@r;
-        height: 782*@r;
+        height: auto;
+        padding-top: 40*@r;
+        padding-bottom: 60*@r;
+        box-sizing: border-box;
         display: block;
         overflow: hidden;
-        margin-top: 60*@r;
-        background: #fff;
-        padding: 0 40*@r;
-        box-sizing: border-box;
-        .verification-title {
+        >h5 {
             width: 100%;
             font-size: 48*@r;
             color: #273844;
-            padding: 50*@r 0;
+            padding-left: 30*@r;
             box-sizing: border-box;
+        }
+        .agreement {
+            position: absolute;
+            bottom: 6*@r;
+            width: 100%;
+            height: 50*@r;
+            line-height: 50*@r;
+            color: @wrongColor;
+            font-size: 24*@r;
+            background: rgba(255, 83, 83, .2);
             display: block;
             overflow: hidden;
+            padding-left: 30*@r;
+            box-sizing: border-box;
         }
+    }
+    .personal-form {
+        width: 680*@r;
+        height: auto;
+        display: block;
+        padding: 0 30*@r;
+        box-sizing: border-box;
+        margin-bottom: 16*@r;
+        li {
+            position: relative;
+            width: 100%;
+            height: 80*@r;
+            border-bottom: 4*@r solid #ecf1f3;
+            display: block;
+            margin-bottom: 70*@r;
+            .regular-none,
+            .regular-default,
+            .regular-active,
+            .regular-wrong {
+                width: 100%;
+                height: 23*@r;
+                line-height: 23*@r;
+                display: block;
+                overflow: hidden;
+                font-size: 24*@r;
+                transition: opacity 0.3s linear 0.1s;
+                -moz-transition: opacity 0.3s linear 0.1s;
+                -webkit-transition: opacity 0.3s linear 0.1s;
+                -o-transition: opacity 0.3s linear 0.1s;
+            }
+            .regular-none {
+                opacity: 0.01;
+            }
+            .regular-default {
+                opacity: 1;
+                color: #7291a1;
+            }
+            .regular-active {
+                opacity: 1;
+                color: #00b07c;
+            }
+            .regular-wrong {
+                opacity: 1;
+                color: #ff5353;
+            }
+            .personal-input-box {
+                position: relative;
+                width: 100%;
+                height: 53*@r;
+                line-height: 53*@r;
+                display: block;
+                overflow: hidden;
+                .personal-input {
+                    position: absolute;
+                    left: 0;
+                    width: 100%;
+                    height: 53*@r;
+                    line-height: 53*@r;
+                    display: block;
+                    overflow: hidden;
+                    border: none;
+                    outline: none;
+                    font-size: 32*@r;
+                    font-weight: bold;
+                    color: #405e6e;
+                }
+                .forgot {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    text-align: right;
+                    font-size: 32*@r;
+                    color: #00b07c;
+                    font-weight: bold;
+                }
+            }
+            .passwordprompt,
+            .passwordprompt-show,
+            .wrong {
+                position: absolute;
+                top: 84*@r;
+                left: 0;
+                width: 100%;
+                z-index: 99;
+                display: block;
+                overflow: hidden;
+                font-size: 22*@r;
+                background: #ecf1f3;
+                box-sizing: border-box;
+                transition: opacity 0.3s linear 0.1s;
+                -moz-transition: opacity 0.3s linear 0.1s;
+                -webkit-transition: opacity 0.3s linear 0.1s;
+                -o-transition: opacity 0.3s linear 0.1s;
+                padding: 12*@r;
+                text-align: justify;
+            }
+            .passwordprompt,
+            .passwordprompt-show {
+                height: auto;
+                line-height: 28*@r;
+                border: 2*@r solid #00b07c;
+                color: #00b07c;
+            }
+            .passwordprompt {
+                opacity: 0.01;
+            }
+            .passwordprompt-show {
+                opacity: 1;
+            }
+            .wrong {
+                height: 80*@r;
+                line-height: 80*@r;
+                border: 2*@r solid #ff5353;
+                color: #ff5353;
+                text-indent: 15*@r;
+            }
+            .wrong-show {
+                opacity: 1;
+            }
+            .wrong-hide {
+                opacity: 0.01;
+            }
+        }
+        .check-success {
+            border-bottom: 4*@r solid #00b07c !important;
+        }
+        .check-wrong {
+            border-bottom: 4*@r solid #ff5353 !important;
+        }
+    }
+    .verify-box {
+        width: 100%;
+        height: 110*@r;
+        display: block;
+        overflow: hidden;
+        padding: 0 30*@r;
+        box-sizing: border-box;
+        margin: 30*@r 0;
+        .verify-cont {
+            position: relative;
+            width: 100%;
+            height: 110*@r;
+            line-height: 110*@r;
+            background: #f7f9fa;
+            text-align: center;
+            font-size: 28*@r;
+            color: #7a8e98;
+            .left,
+            .right {
+                position: absolute;
+                top: 0;
+                width: 63*@r;
+                height: 61*@r;
+                margin: 25*@r 0;
+                img {
+                    max-width: 100%;
+                    max-height: 100%;
+                    display: block;
+                    overflow: hidden;
+                }
+            }
+            .left {
+                left: 36*@r;
+            }
+            .right {
+                right: 36*@r;
+            }
+        }
+    }
+    .btn-box {
+        width: 100%;
+        height: 88*@r;
+        display: block;
+        overflow: hidden;
+        padding: 0 30*@r;
+        box-sizing: border-box;
+        margin-bottom: 80*@r;
+        .btn-cont {
+            width: 100%;
+            height: 88*@r;
+            line-height: 88*@r;
+            text-align: center;
+            background: #a0aeb6;
+            color: #fff;
+            font-size: 32*@r;
+            font-weight: bold;
+            border: none;
+            outline: none;
+        }
+        .btn-success {
+            background: #00b07c;
+        }
+    }
+    .remember {
+        width: 100%;
+        height: auto;
+        display: block;
+        overflow: hidden;
+        margin-bottom: 30*@r;
+        font-size: 28*@r;
+        padding: 0 30*@r;
+        box-sizing: border-box;
+        >span {
+            padding-left: 6*@r;
+            vertical-align: middle;
+            >em {
+                color: #00b07c;
+                font-style: normal;
+            }
+        }
+    }
+    .am-checkbox.am-checkbox-checked .am-checkbox-inner {
+        border-color: #00b07c;
+        background: #00b07c;
+    }
+    .am-checkbox-inner {
+        border-radius: 0 !important;
+    }
+}
+
+.accoun {
+    width: 100%;
+    height: auto;
+    margin: 50*@r 0;
+    text-align: center;
+    font-size: 28*@r;
+    color: #00b07c;
+    display: block;
+    overflow: hidden;
+}
+
+.verification {
+    position: relative;
+    width: 680*@r;
+    height: 782*@r;
+    display: block;
+    overflow: hidden;
+    margin: 0 auto;
+    background: #fff;
+    margin-top: 50*@r;
+    padding: 0 30*@r;
+    box-sizing: border-box;
+    .verification-title {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding-top: 40*@r;
+        padding-bottom: 60*@r;
+        box-sizing: border-box;
+        display: block;
+        overflow: hidden;
+        >h5 {
+            width: 100%;
+            font-size: 48*@r;
+            color: #273844;
+        }
+        .agreement {
+            position: absolute;
+            bottom: 6*@r;
+            width: 100%;
+            height: 50*@r;
+            line-height: 50*@r;
+            color: @wrongColor;
+            font-size: 24*@r;
+            background: rgba(255, 83, 83, .2);
+            display: block;
+            overflow: hidden;
+            padding-left: 30*@r;
+            box-sizing: border-box;
+        }
+    }
+    .verification-box {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: auto;
+        display: block;
+        overflow: hidden;
+        padding: 0 30*@r;
+        box-sizing: border-box;
         .verification-cont,
         .verification-check-success,
         .verification-check-wrong {
@@ -40,7 +335,6 @@
             overflow: hidden;
             border-bottom: 4*@r solid #ecf1f3;
             overflow: hidden;
-            margin: 164*@r 0;
             .verification-regular-none,
             .verification-regular-default,
             .verification-regular-active {
@@ -83,14 +377,22 @@
         .verification-check-wrong {
             border-bottom: 4*@r solid #ff5353;
         }
-        .verification-btn {
-            //          position: absolute;
-            //          bottom: 80*@r;
+    }
+    .btn-box {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 88*@r;
+        display: block;
+        overflow: hidden;
+        padding: 0 30*@r;
+        box-sizing: border-box;
+        margin-bottom: 80*@r;
+        .btn-cont {
             width: 100%;
             height: 88*@r;
             line-height: 88*@r;
-            display: block;
-            overflow: hidden;
             text-align: center;
             background: #a0aeb6;
             color: #fff;
@@ -98,207 +400,75 @@
             font-weight: bold;
             border: none;
             outline: none;
-            margin-bottom: 80*@r;
         }
-        .verification-btn-success {
+        .btn-success {
             background: #00b07c;
         }
     }
-    .login-cont-box {
-        width: 680*@r;
+    .email-addr{
+        width: 100%;
+            height: auto;
+            display: block;
+            overflow: hidden;
+            font-size: 40*@r;
+
+            text-align: justify;
+            font-weight: bold;
+            margin: 40*@r 0;
+            color: #415e6d;
+    }
+    .receiveno{
+        width: 100%;
+            height: auto;
+            display: block;
+            overflow: hidden;
+            font-size: 24*@r;
+            line-height: 30*@r;
+            text-align: justify;
+            color: #7291a1;
+            a{
+           color: #00b07c;
+       }
+    }
+    .verification-footer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
         height: auto;
         display: block;
         overflow: hidden;
-        background: #fff;
-        padding: 0 40*@r;
+        padding: 0 30*@r;
         box-sizing: border-box;
-        margin-top: 60*@r;
-        .login-title {
-            font-size: 48*@r;
-            color: #273844;
-            padding: 50*@r 0;
-            box-sizing: border-box;
-            display: block;
-            overflow: hidden;
-        }
-        .login-form {
+        margin-bottom: 80*@r;
+        color: #a0aeb6;
+       a{
+           color: #00b07c;
+       }
+        .dec-title {
             width: 100%;
             height: auto;
             display: block;
-            padding: 0;
-            padding-bottom: 16*@r;
-            li {
-                position: relative;
-                width: 100%;
-                height: 80*@r;
-                border-bottom: 4*@r solid #ecf1f3;
-                display: block;
-                margin-bottom: 70*@r;
-                .login-regular-none,
-                .login-regular-default,
-                .login-regular-active,
-                .login-regular-wrong {
-                    width: 100%;
-                    height: 23*@r;
-                    line-height: 23*@r;
-                    display: block;
-                    overflow: hidden;
-                    font-size: 24*@r;
-                    transition: opacity 0.3s linear 0.1s;
-                    -moz-transition: opacity 0.3s linear 0.1s;
-                    -webkit-transition: opacity 0.3s linear 0.1s;
-                    -o-transition: opacity 0.3s linear 0.1s;
-                }
-                .login-regular-none {
-                    opacity: 0.01;
-                }
-                .login-regular-default {
-                    opacity: 1;
-                    color: #7291a1;
-                }
-                .login-regular-active {
-                    opacity: 1;
-                    color: #00b07c;
-                }
-                .login-regular-wrong{
-                    opacity: 1;
-                    color: #ff5353;
-                }
-                .login-box {
-                    position: relative;
-                    width: 100%;
-                    height: 53*@r;
-                    line-height: 53*@r;
-                    display: block;
-                    overflow: hidden;
-                    .login-input {
-                        position: absolute;
-                        left: 0;
-                        width: 100%;
-                        height: 53*@r;
-                        line-height: 53*@r;
-                        display: block;
-                        overflow: hidden;
-                        border: none;
-                        outline: none;
-                        font-size: 32*@r;
-                        font-weight: bold;
-                        color: #405e6e;
-                    }
-                    .forgot {
-                        position: absolute;
-                        top: 0;
-                        right: 0;
-                        text-align: right;
-                        font-size: 32*@r;
-                        color: #00b07c;
-                        font-weight: bold;
-                    }
-                }
-                .wrong {
-                    position: absolute;
-                    top: 84*@r;
-                    left: 0;
-                    width: 100%;
-                    height: 80*@r;
-                    z-index: 99;
-                    line-height: 80*@r;
-                    display: block;
-                    overflow: hidden;
-                    border: 2*@r solid #ff5353;
-                    color: #ff5353;
-                    font-size: 22*@r;
-                    background: #ecf1f3;
-                    box-sizing: border-box;
-                    text-indent: 15*@r;
-                    transition: opacity 0.3s linear 0.1s;
-                    -moz-transition: opacity 0.3s linear 0.1s;
-                    -webkit-transition: opacity 0.3s linear 0.1s;
-                    -o-transition: opacity 0.3s linear 0.1s;
-                }
-                .wrong-show{
-                    opacity: 1;
-                }
-                .wrong-hide{
-                    opacity: 0.01;
-                }
-            }
-            .check-success {
-                border-bottom: 4*@r solid #00b07c;
-            }
-            .check-wrong {
-                border-bottom: 4*@r solid #ff5353;
-            }
-        }
-        .login-verify {
-            position: relative;
-            width: 100%;
-            height: 110*@r;
-            line-height: 110*@r;
-            display: block;
             overflow: hidden;
-            background: #f7f9fa;
-            text-align: center;
-            font-size: 28*@r;
-            margin-top: 10*@r;
-            margin-bottom: 50*@r;
-            color: #7a8e98;
-            .left {
-                position: absolute;
-                left: 36*@r;
-                top: 0;
-                width: 63*@r;
-                height: 61*@r;
-                margin: 25*@r 0;
-                img {
-                    max-width: 100%;
-                    max-height: 100%;
-                    display: block;
-                    overflow: hidden;
-                }
-            }
-            .right {
-                position: absolute;
-                right: 36*@r;
-                top: 0;
-                width: 63*@r;
-                height: 61*@r;
-                margin: 25*@r 0;
-                img {
-                    max-width: 100%;
-                    max-height: 100%;
-                    display: block;
-                    overflow: hidden;
-                }
+            margin-bottom: 40*@r;
+            .am-icon-md {
+                width: 14px;
+                height: 14px;
+                vertical-align: top;
+                padding-right: 10*@r;
             }
         }
-        .login-btn {
-            width: 100%;
-            height: 88*@r;
-            line-height: 88*@r;
-            display: block;
-            overflow: hidden;
-            text-align: center;
-            background: #a0aeb6;
-            color: #fff;
-            font-size: 32*@r;
-            font-weight: bold;
-            border: none;
-            outline: none;
-            margin-bottom: 80*@r;
-        }
-        .login-btn-success {
-            background: #00b07c;
+        p {
+            font-size: 24*@r;
+            line-height: 30*@r;
+            text-align: justify;
+            color: #a0aeb6;
         }
     }
-    .accoun {
-        width: 100%;
-        height: auto;
-        margin-top: 50*@r;
-        text-align: center;
-        font-size: 28*@r;
-        color: #00b07c;
-        display: block;
-        overflow: hidden;
+    p {
+        color: #415e6d;
+        font-size: 24*@r;
+        line-height: 30*@r;
+        text-align: justify;
     }
 }

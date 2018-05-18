@@ -12,10 +12,11 @@ import {
 import Header from './index/header'
 import Home from './home/index'
 import UserLogin from './user/login/login'
-
 import Verification from './user/login/verification'
 import Registered from './user/login/registered'
-import Findpwd from './user/login/findpwd'
+import FindpwdPassword from './user/login/forgotPassword'
+import ResetPassword from './user/login/resetPassword'
+import EmaillVerification from './user/login/emaillVerification'
 
 import LoginState from './loginState/loginState'
 import AddressList from './address/addressList/addressList'
@@ -49,10 +50,12 @@ export default (
                             <Route path="/login-state" component={LoginState}/>
                             <Route path="/addressList" component={AddressList}/>
                             <Route path="/assets" component={Assets}/>
-                            <Route path="/user-login" component={UserLogin}/>
+                            <Route path="/login" component={UserLogin}/>
                             <Route path="/verification" component={Verification}/>
                             <Route path="/registered" component={Registered}/>
-                            <Route path="/findpwd" component={Findpwd}/>
+                            <Route path="/findpwdPassword" component={FindpwdPassword}/>
+                            <Route path="/resetPassword" component={ResetPassword}/>
+                            <Route path="/emaillVerification" component={EmaillVerification}/>
                         </Switch>
                 </div>
             </BrowserRouter>

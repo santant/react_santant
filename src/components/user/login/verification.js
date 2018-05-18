@@ -37,27 +37,34 @@ class Verification extends React.Component {
 	}
 	render() {
 		return (
-			<div className='login'>
-							<div className="verification-box">
-								<div className="verification-title">GA Verification</div>
+			<div className='verification'>
+				<div className="verification-title">
+					<h5>GA Verification</h5>
+				</div>
+				<div className="verification-box">
+					<div className={this.state.verificationstatus}>
+						<span className={this.state.verificationNameclass}>
+							GA Verification
+						</span>
+						<input type="text"
+						name="nsername"
+						value={this.state.verification}
+						onChange={this.handleverificationChange}
+						onFocus={this.handleverificationFocus}
+						onBlur={this.handleverificationBlur}
+						placeholder="GA Verification"
+						className="verification-input"/>
+					</div>
+				</div>
+				<div className="btn-box">
+					<button
+					className={this.state.verificationstatus?'btn-cont btn-success':'btn-cont'}
+					>
+						Confirm
+					</button>
+				</div>
 
-								<div className={this.state.verificationstatus}>
-									<span className={this.state.verificationNameclass}>GA Verification</span>
-									<input type="text" 
-                                	name="nsername"
-                                	value={this.state.verification}
-                                	onChange={this.handleverificationChange}
-                                	onFocus={this.handleverificationFocus}
-                                	onBlur={this.handleverificationBlur}
-                                	placeholder="GA Verification" 
-                                	className="verification-input"/>
-								</div>
-								<button 
-                  	 className={this.state.verificationstatus?'verification-btn verification-btn-success':'verification-btn'}
-                    >Confirm</button>
-							</div>
-                
-						</div>
+			</div>
 		)
 	}
 }
