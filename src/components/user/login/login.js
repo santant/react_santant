@@ -14,7 +14,7 @@ class Login extends React.Component {
                     </div>
                     <ul className="login-form">
                         <li className="change">
-                            <p className="login-regular-default">Username or Email</p>
+                            <span className="login-regular-default">Username or Email</span>
                             <div className="login-box">
                                 <input type="text" name="nsername" value="" placeholder="Username or Email" className="login-input"/>
                                 <span className="forgot">Forgot?</span>
@@ -22,7 +22,7 @@ class Login extends React.Component {
 
                         </li>
                         <li>
-                            <p className="login-regular-active">Password</p>
+                            <span className="login-regular-active">Password</span>
                             <div className="login-box">
                                 <input type="password" name="password" value="" placeholder="Password" className="login-input"/>
 
