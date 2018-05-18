@@ -5,6 +5,19 @@ import verifyURL2 from './images/verify02.png';
 
 
 class Login extends React.Component {
+	constructor(props) {
+        super(props);
+        this.state = {
+            userName: 'sss',
+            password:''
+        };
+    }
+	
+	handleUserName = (event, name) => {
+        this.setState({
+            userName: name
+        })
+    }
     render() {
         return (
             <div className='login'>
@@ -16,7 +29,11 @@ class Login extends React.Component {
                         <li className="change">
                             <span className="login-regular-default">Username or Email</span>
                             <div className="login-box">
-                                <input type="text" name="nsername" value="" placeholder="Username or Email" className="login-input"/>
+                                <input type="text" name="nsername"  
+                                	value={this.state.userName}
+                                	onChange={this.handleUserName}
+                                	placeholder="Username or Email" 
+                                	className="login-input"/>
                                 <span className="forgot">Forgot?</span>
                             </div>
 
@@ -24,7 +41,7 @@ class Login extends React.Component {
                         <li>
                             <span className="login-regular-active">Password</span>
                             <div className="login-box">
-                                <input type="password" name="password" value="" placeholder="Password" className="login-input"/>
+                                <input type="password" name="password" value={this.state.password} placeholder="Password" className="login-input"/>
 
                             </div>
 
