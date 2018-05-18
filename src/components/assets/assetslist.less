@@ -1,0 +1,99 @@
+@import "../../assets/less/publicScss";
+.container{
+  padding: 0;
+}
+#assets {
+  .titleName{
+    height: 97*@r;
+    line-height:97*@r;
+    border-bottom: 1px solid #3d5765;
+    width: 680*@r;
+    margin: 0 auto;
+    span{
+      display: inline-block;
+      line-height:97*@r;
+      color: #7291a1;
+      font-size: 32*@r;
+    }
+    >img{
+      display: block;
+      width: 98*@r;
+      float: right;
+    }
+  }
+  .price{
+    width: 680*@r;
+    margin: 0 auto;
+    padding: 24*@r 0;
+    span{
+      display: block;
+      padding: 15*@r 0;
+      color: #7291a1;
+    }
+    .Value{font-size: 24*@r}
+    .btc{font-size: 48*@r;font-weight: bold;color: #fff}
+    .usd{font-size: 28*@r;}
+
+  }
+  .assets-list{
+    background: #1e2a33;
+    dl{
+      width: 680*@r;
+      margin: 0 auto;
+      .title-search{
+        border-bottom: 1px solid #3c5765;
+        .am-checkbox-inner{
+          border-radius: 0;
+          border: 1px solid #7291a1;
+        }
+        position: relative;
+        color: #7291a1;
+        font-size: 24*@r;
+        .am-checkbox.am-checkbox-checked .am-checkbox-inner{
+          background: #00b07c;
+          border-color: #00b07c;
+        }
+        height: 98*@r;
+        line-height: 98*@r;
+        >span{
+          padding-left: 24*@r;
+        }
+        .search{
+          position: absolute;
+          top:28*@r;
+          right: 2*@r;
+        }
+      }
+      .price-title,.price-number{
+        display: flex;
+        height: 80*@r;
+        line-height: 80*@r;
+
+        .title,.number{
+          flex: 1;
+          color: #7291a1;
+          font-size: 20*@r;
+          &:nth-child(2){
+            text-align: center;
+          }
+          &:nth-child(3){
+            text-align: right;
+          }
+        }
+        .number{
+          font-size: 32*@r;
+          color: #e3ecf0;
+        }
+        .number_name{
+          color: #718f9f;
+          font-weight: bold;
+        }
+      }
+      //.price-number{
+      //  &:hover{
+      //    background: #182229;
+      //  }
+      //}
+    }
+  }
+}

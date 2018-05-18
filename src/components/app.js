@@ -12,6 +12,10 @@ import {
 import Header from './index/header'
 import Home from './home/index'
 import UserLogin from './user/login/login'
+import LoginState from './loginState/loginState'
+import AddressList from './address/addressList/addressList'
+import Assets from './assets/assets'
+import 'antd-mobile/dist/antd-mobile.css'
 import '../assets/css/animate.min.css'
 import '../app.less'
 
@@ -38,6 +42,9 @@ export default (
                     <div className='container'>
                         <Switch>
                             <Route path="/home" component={Home}/>
+                            <Route path="/login-state" component={LoginState}/>
+                            <Route path="/addressList" component={AddressList}/>
+                            <Route path="/assets" component={Assets}/>
                             <Route path="/user-login" component={UserLogin}/>
                         </Switch>
                     </div>
