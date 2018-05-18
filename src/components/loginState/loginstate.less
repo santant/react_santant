@@ -1,0 +1,63 @@
+@import "../../assets/less/publicScss";
+#LoginState{
+  .login_state_group{
+    display: flex;
+    width: 692*@r;
+    height: 88*@r;
+    margin: 0 auto;
+    -webkit-box-pack: justify;
+    margin: 52*@r 0;
+    li{
+      box-sizing: border-box;
+      line-height: 88*@r;
+      text-align: center;
+      width: 330*@r;
+      color: #fff;
+      font-size: 32*@r;
+      border: 1px solid #00b07c;
+      //flex: 1;
+      &:nth-of-type(2){
+        margin-left: 30*@r;
+        background: #00b07c;
+      }
+    }
+  }
+  .userInfo{
+    padding: 38*@r 0;
+    .userName{
+      font-size: 36*@r;
+      font-weight: bold;
+      color: #e3ecf0;
+      line-height: 60*@r;
+    }
+    .userEmail{
+      color: #7291a1;
+      font-size: 28*@r;
+      line-height: 60*@r;
+    }
+  }
+  .list-group{
+    width: 100%;
+    border-top: 1px solid #3c5867;
+    ol{
+      li{
+        height: 83*@r;
+        line-height: 83*@r;
+        text-align: left;
+        font-size: 36*@r;
+        color: #7291a1;
+      }
+      .active{
+        font-weight: bold;
+        color: #00b07c;
+      }
+    }
+  }
+  .LogOut{
+    position: fixed;
+    color: #7291a1;
+    font-size: 32*@r;
+    left: 30*@r;
+    bottom:30*@r
+  }
+}

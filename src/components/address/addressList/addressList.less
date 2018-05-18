@@ -1,0 +1,95 @@
+@import "../../../assets/less/publicScss";
+//.container{
+//  padding: 0 35*@r;
+//}
+#addressList {
+  .address_title {
+    width: 680*@r;
+    margin: 0 auto;
+    font-size: 32*@r;
+    line-height: 100*@r;
+    height: 100*@r;
+    color: #7291a1;
+  }
+  .address_box {
+    background: #1e2a33;
+    &:first-of-type{
+      padding-top: 30*@r;
+    }
+    .address_item {
+      width: 680*@r;
+      margin: 0 auto;
+      height: 80*@r;
+      line-height: 80*@r;
+      font-size: 32*@r;
+      color: #718f9f;
+      overflow: hidden;
+      .next-list{
+        width: 100*@r;
+        display:inline-block;
+        text-align: center;
+        float: right;
+        position: relative;
+        >img{
+          position: absolute;
+          width: 26*@r;
+          right: 0;
+          top: 20*@r;
+        }
+      }
+    }
+    .address_msg {
+      width: 680*@r;
+      margin: 0 auto;
+      padding-bottom: 10*@r;
+      .key_msg_box {
+        .address_key{
+          color: #fff;
+          font-size: 28*@r;
+          line-height: 63*@r;
+          height: 63*@r;
+          display: block;
+          overflow: hidden;
+          text-overflow:ellipsis;
+          white-space: nowrap;
+        }
+        .key_msg{
+          padding: 23*@r 0 20*@r 0;
+          height: 84*@r;
+          color: #7291a1;
+          font-size: 20*@r;
+          position: relative;
+          .key_text{
+            line-height: 30*@r;
+            width: 420*@r;
+            padding-top: 30*@r;
+            display: inline-block;
+          }
+          >img{
+            width: 104*@r;
+          }
+          .delete{
+            position: absolute;
+            right: 0;
+            top: 50*@r;
+          }
+          .copy{
+            position: absolute;
+            right: 116*@r;
+            top: 50*@r;
+          }
+        }
+      }
+      .address_add{
+        width: 680*@r;
+        margin: 0 auto;
+        font-size: 32*@r;
+        line-height: 88*@r;
+        text-align: center;
+        color: #fff;
+        background: #00b07c;
+      }
+    }
+  }
+
+}
