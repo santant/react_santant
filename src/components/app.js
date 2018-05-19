@@ -14,7 +14,6 @@ import Header from './index/header'
 import Home from './home/index'
 
 import AddressErificationCode from './address/address_add/address_erification_code' // 资产中心
-
 import UserLogin from './user/login/login'
 import Verification from './user/login/verification'
 import Registered from './user/login/registered'
@@ -29,6 +28,10 @@ import CurrencyRecharge from './currency/CurrencyRecharge' // 币种充值
 import CurrentEntrust from './entrust/currentEntrust' // 当前委托
 import EntrustDeal from './entrust/EntrustDeal' // 部分成交页面
 import UserCenter from './user/userCenter/userCenter' // 个人中心(认证和未认证状态)
+import FindpwdPassword from './user/login/forgotPassword'
+import ResetPassword from './user/login/resetPassword'
+import EmaillVerification from './user/login/emaillVerification'
+import EditorPassword from './user/personal/editorPassword'
 import 'antd-mobile/dist/antd-mobile.css'
 import '../assets/css/animate.min.css'
 import '../assets/font/iconfont.css'
@@ -56,6 +59,7 @@ export default (
                     <Switch>
                         <Route path="/home" component={Home}/>
                         <Route path="/login-state" component={LoginState}/>
+                        <Route path="/login" component={UserLogin}/>
                         <Route path="/addressList" onEnter={setTitle('业绩达成')} component={AddressList}/>
                         <Route path="/assets" component={Assets}/>
                         <Route path="/user-login" component={UserLogin}/>
@@ -70,6 +74,10 @@ export default (
                         <Route path="/entrustDeal" component={EntrustDeal}/>
                         <Route path="/userCenter" component={UserCenter}/>
                         <Route path="/findpwd" component={Findpwd}/>
+                        <Route path="/findpwdPassword" component={FindpwdPassword}/>
+                        <Route path="/resetPassword" component={ResetPassword}/>
+                        <Route path="/emaillVerification" component={EmaillVerification}/>
+                        <Route path="/editorPassword" component={EditorPassword}/>
                     </Switch>
                 </div>
             </BrowserRouter>

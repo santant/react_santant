@@ -37,7 +37,7 @@ class Verification extends React.Component {
 	}
 	render() {
 		return (
-			<div className='login'>
+			<div className='verification'>
 				<div className="verification-box">
 					<div className="verification-title">GA Verification</div>
 					<div className={this.state.findpwdstatus}>
