@@ -17,6 +17,7 @@ import Registered from './user/login/registered'
 import FindpwdPassword from './user/login/forgotPassword'
 import ResetPassword from './user/login/resetPassword'
 import EmaillVerification from './user/login/emaillVerification'
+import EditorPassword from './user/personal/editorPassword'
 
 import LoginState from './loginState/loginState'
 import AddressList from './address/addressList/addressList'
@@ -56,6 +57,7 @@ export default (
                             <Route path="/findpwdPassword" component={FindpwdPassword}/>
                             <Route path="/resetPassword" component={ResetPassword}/>
                             <Route path="/emaillVerification" component={EmaillVerification}/>
+                            <Route path="/editorPassword" component={EditorPassword}/>
                         </Switch>
                 </div>
             </BrowserRouter>
