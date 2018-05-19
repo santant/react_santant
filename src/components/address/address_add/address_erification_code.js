@@ -27,7 +27,7 @@ class AddressErificationCode extends React.Component {
         })
         return (
             <div id='AddressErificationCode'>
-                <div className="address_title">← GA Verification</div>
+                <div className="address_title"><i className='iconfont'>&#xe625;</i> GA Verification</div>
                 <div className="erification_box">
                     <input onChange={this.changeValue.bind(this)}  className='password_tel' maxLength='6' type="tel"/>
                     <div className='erification2'>

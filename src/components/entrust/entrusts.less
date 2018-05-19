@@ -1,0 +1,171 @@
+@import "../../assets/less/publicScss";
+
+#currentEntrust {
+  //height: 100%;
+  background: #1f2b34;
+  overflow-y: auto;
+  .am-tabs-default-bar-top .am-tabs-default-bar-underline, .am-tabs-default-bar-bottom .am-tabs-default-bar-underline {
+    top: 0;
+    border: none;
+    border-top: 6*@r solid #1ba776;
+  }
+  .am-tabs-default-bar-tab-active {
+    background: #1f2a33;
+  }
+  .tab_box {
+    width: 680*@r;
+    margin: 0 auto;
+    padding: 13*@r 0;
+    border-bottom: 1px solid #7391a1;
+    li {
+      display: flex;
+      span {
+        flex: 1;
+        &:last-child {
+          text-align: right;
+        }
+      }
+    }
+    .item_tab {
+      height: 74*@r;
+      line-height: 74*@r;
+      font-size: 32*@r;
+      color: #fff;
+      b {
+        color: #1ba776;
+      }
+      .time {
+        color: #7391a1;
+        font-size: 24*@r;
+      }
+    }
+    .tab {
+      height: 49*@r;
+      line-height: 49*@r;
+      span {
+        &:nth-child(1) {
+          color: #7291a1;
+          font-size: 24*@r;
+        }
+        &:nth-child(2) {
+          color: #e3ecf0;
+          font-size: 32*@r;
+        }
+      }
+    }
+    .cancel {
+      line-height: 58*@r;
+      height: 58*@r;
+      font-size: 28*@r;
+      color: #1ba776;
+    }
+  }
+  .dis {
+    top: 92*@r !important;
+  }
+  .my-drawer {
+    position: fixed;
+    top: 290*@r;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    z-index: 99;
+  }
+  .my-drawer .am-drawer-sidebar {
+    background-color: #1e2b34;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .my-drawer .am-drawer-sidebar .am-list {
+    width: 580*@r;
+    padding: 0;
+  }
+}
+
+// 滑动的抽屉
+#sidebar {
+  width: 508*@r;
+  padding: 0 33*@r 0 44*@r;
+  .orderState {
+    font-size: 24*@r;
+    color: #7291a1;
+    height: 98*@r;
+    line-height: 98*@r;
+  }
+  .btn_box_curess {
+    overflow: hidden;
+    .active_li {
+      border: 2px solid #00b07c;
+    }
+    li {
+      width: 240*@r;
+      line-height: 66*@r;
+      height: 66*@r;
+      text-align: center;
+      color: #7391a1;
+      font-size: 32*@r;
+      box-sizing: border-box;
+      background: #273844;
+      float: left;
+      margin-bottom: 22*@r;
+
+      &:nth-child(2n+2) {
+        float: right;
+      }
+    }
+  }
+
+}
+
+#EntrustDeal {
+  height: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  .tab_box {
+    width: 680*@r;
+    margin: 0 auto;
+    padding: 13*@r 0;
+    border-bottom: 1px solid #7391a1;
+    li {
+      display: flex;
+      span {
+        flex: 1;
+        &:last-child {
+          text-align: right;
+        }
+      }
+    }
+    .item_tab {
+      height: 74*@r;
+      line-height: 74*@r;
+      font-size: 32*@r;
+      color: #fff;
+      b {
+        color: #1ba776;
+      }
+      .time {
+        color: #7391a1;
+        font-size: 24*@r;
+      }
+    }
+    .tab {
+      height: 49*@r;
+      line-height: 49*@r;
+      span {
+        &:nth-child(1) {
+          color: #7291a1;
+          font-size: 24*@r;
+        }
+        &:nth-child(2) {
+          color: #e3ecf0;
+          font-size: 32*@r;
+        }
+      }
+    }
+    .cancel {
+      line-height: 58*@r;
+      height: 58*@r;
+      font-size: 28*@r;
+      color: #1ba776;
+    }
+  }
+}

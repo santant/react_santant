@@ -1,0 +1,164 @@
+@import "../../assets/less/publicScss";
+
+#root > div, .appRouter {
+  height: 100%;
+}
+
+// 币种搜索
+#currencySearch {
+  height: 100%;
+  background: #1f2b34;
+  .search_box {
+    width: 680*@r;
+    margin: 0 auto;
+    dl {
+      dd {
+        line-height: 72*@r;
+        height: 72*@r;
+        border-bottom: 2px solid #00b07c;
+        position: relative;
+        margin-bottom: 32*@r;
+        input {
+          width: 85%;
+          height: 100%;
+          background: #1f2b34;
+          border: none;
+          caret-color: #00b07c;
+          color: #00b07c;
+        }
+        > svg {
+          color: #00b07c;
+          position: absolute;
+          right: 0;
+          top: 10*@r;
+        }
+      }
+      dt {
+        line-height: 78*@r;
+        height: 78*@r;
+        font-size: 32*@r;
+        color: #7291a1;
+      }
+    }
+  }
+}
+
+// 币种详情
+#currencyMagess {
+  height: 100%;
+  background: #1e2b33;
+  .back_currency {
+    background: #2e3d45;
+    span {
+      display: block;
+      line-height: 3.44888889rem;
+      color: #7291a1;
+      font-size: 1.13777778rem;
+      width: 680*@r;
+      margin: 0 auto;
+      border-bottom: 1px solid #415e6d;
+      position: relative;
+      .address_url {
+        width: 100*@r;
+        position: absolute;
+        right: -30*@r;
+        top: -4*@r;
+      }
+    }
+  }
+  .price {
+    background: #2e3d45;
+
+    padding: 24*@r 45*@r;
+    span {
+      display: block;
+      padding: 15*@r 0;
+      color: #7291a1;
+    }
+    .Value {
+      font-size: 24*@r
+    }
+    .btc {
+      font-size: 48*@r;
+      font-weight: bold;
+      color: #fff
+    }
+    .usd {
+      font-size: 28*@r;
+    }
+
+  }
+  .price_msg {
+    padding: 45*@r;
+    background: #1e2b34;
+    li {
+      span {
+        padding: 10*@r 0;
+        font-size: 24*@r;
+        color: #7291a1;
+      }
+      p {
+        padding: 10*@r 0;
+        font-size: 32*@r;
+        color: #fff;
+        font-weight: bold
+      }
+      padding-bottom: 45*@r;
+    }
+    .btn_box {
+      display: flex;
+      padding: 40% 0 10%;
+      div {
+        flex: 1;
+        line-height: 88*@r;
+        height: 88*@r;
+        text-align: center;
+        font-size: 32*@r;
+        color: #fff;
+        background: #00b07c;
+        &:nth-child(2) {
+          margin-left: 20*@r;
+          background: #ff5353;
+        }
+      }
+    }
+  }
+}
+
+//币种充值
+#CurrencyRecharge {
+  height: 100%;
+  background: #1e2b34;
+  .weixin {
+    display: block;
+    width: 314*@r;
+    height: 314*@r;
+    margin: 84*@r auto 15*@r;
+  }
+  > P {
+    width: 680*@r;
+    margin: 0 auto;
+  }
+  .key {
+    line-height: 49*@r;
+    height: 49*@r;
+    text-align: center;
+    font-size: 28*@r;
+    color: #00b07c;
+  }
+  .code_key {
+    font-size: 32*@r;
+    color: #e3ecf0;
+    line-height: 46*@r;
+    height: 46*@r;
+    padding-top: 54*@r;
+  }
+  .copy_key {
+    padding-bottom: 84*@r;
+  }
+  .text_msg {
+    color: #7291a1;
+    font-size: 24*@r;
+    line-height: 34*@r;
+  }
+}

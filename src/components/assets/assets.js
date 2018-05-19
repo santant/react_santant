@@ -9,7 +9,7 @@ class Assets extends React.Component {
                <div className='titleName'>
                    <span>ASSETS</span>
                    <img src={require('./image/pieChart.png')} alt=""/>
-                   <img src={require('./image/addressList.png')} alt=""/>
+                   <img  className='img_address' src={require('./image/addressList.png')} alt=""/>
                </div>
                 <div className='price'>
                     <span className='Value'>Estimated Value</span>

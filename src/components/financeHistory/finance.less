@@ -1,0 +1,59 @@
+@import "../../assets/less/publicScss";
+
+#financeHistory {
+  .history_title {
+    width: 680*@r;
+    margin: 0 auto;
+    font-size: 32*@r;
+    line-height: 100*@r;
+    height: 100*@r;
+    color: #7291a1;
+  }
+  .tabs_content{
+    background: #1e2a33;
+    padding: 27*@r 0 24*@r 0;
+    .content_padding{
+      width: 680*@r;
+      margin: 0 auto;
+      border-bottom: 1px solid #415e6d;
+    }
+    .time_status{
+      display: flex;
+      line-height: 58*@r;
+      color: #7391a1;
+      font-size: 24*@r;
+      span{
+        flex: 1;
+        &:nth-child(2){
+          text-align: right;
+        }
+      }
+    }
+    .price{
+      font-size: 32*@r;
+      font-weight: bold;
+      color: #e3ecf0;
+      line-height: 72*@r;
+    }
+    .key{
+      font-size:28*@r;
+      color: #adc4d0;
+      font-weight: 300;
+      line-height: 40*@r;
+    }
+    .key_msg{
+      font-size:24*@r;
+      color: #7291a1;
+      line-height: 48*@r;
+      padding-bottom: 24*@r;
+    }
+  }
+  .am-tabs-default-bar-top .am-tabs-default-bar-underline, .am-tabs-default-bar-bottom .am-tabs-default-bar-underline {
+    top: 0;
+    border: none;
+    border-top: 6*@r solid #1ba776;
+  }
+  .am-tabs-default-bar-tab-active{
+    background: #1f2a33;
+  }
+}
