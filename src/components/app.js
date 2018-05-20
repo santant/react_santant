@@ -11,8 +11,6 @@ import {
     CSSTransition
 } from 'react-transition-group'
 import Header from './index/header'
-import Home from './home/index'
-
 import AddressErificationCode from './address/address_add/address_erification_code' // 资产中心
 import BindingGa from './ga/bindingGa' // 绑定ga
 import unBindingGa from './ga/unbindingGa' // 解绑ga
@@ -39,7 +37,6 @@ import '../assets/css/animate.min.css'
 import '../assets/font/iconfont.css'
 import '../app.less'
 
-const setTitle = title => () => document.title = title
 export default (
     <TransitionGroup>
         <CSSTransition
@@ -57,14 +54,14 @@ export default (
         >
             <BrowserRouter>
                 <div className='appRouter ov_hidden'>
-                    <Header></Header>
+                    {/*如果userState=1未登录，=2已登录*/}
+                    <Header userState='1'></Header>
                     <Switch>
-                        <Route path="/home" component={Home}/>
                         <Route path="/login-state" component={LoginState}/>
                         <Route path="/bindingGa" component={BindingGa}/>
                         <Route path="/unBindingGa" component={unBindingGa}/>
                         <Route path="/login" component={UserLogin}/>
-                        <Route path="/addressList" onEnter={setTitle('业绩达成')} component={AddressList}/>
+                        <Route path="/addressList" component={AddressList}/>
                         <Route path="/assets" component={Assets}/>
                         <Route path="/user-login" component={UserLogin}/>
                         <Route path="/addresserificationcode" component={AddressErificationCode}/>
