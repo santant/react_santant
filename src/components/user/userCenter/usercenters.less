@@ -95,7 +95,9 @@
     }
   }
 }
-
+.modelFixedHide{
+  display: none;
+}
 .modelFixed {
   position: fixed;
   width: 100%;
@@ -103,4 +105,46 @@
   top: 0;
   left: 0;
   background: rgba(0,0,0,0.5);
+  .Fixed_box{
+    width: 633*@r;
+    height: 598*@r;
+    position: absolute;
+    margin: auto auto;
+    z-index: 2;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background: #2e3d45;
+    .close{
+      width: 48*@r;
+      height: 48*@r;
+      position: absolute;
+      right: 22*@r;
+      top: 22*@r;
+      font-size: 48*@r;
+      color: #486676;
+    }
+    >img{
+      width: 316*@r;
+      display: block;
+      margin: 120*@r auto 50*@r;
+    }
+    p{
+      line-height: 73*@r;
+      text-align: center;
+      color: #fff;
+      font-size: 32*@r;
+    }
+    .submit{
+      width: 437*@r;
+      height: 89*@r;
+      line-height: 89*@r;
+      text-align: center;
+      font-size: 32*@r;
+      color: #fff;
+      background: #00b07c;
+      margin: 74*@r auto 0;
+    }
+  }
 }

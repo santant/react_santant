@@ -1,7 +1,7 @@
 import React from 'react'
 import './user.less'
 
-class Verification extends React.Component {
+class ResetPassword extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -68,4 +68,4 @@ class Verification extends React.Component {
 		)
 	}
 }
-export default Verification
+export default ResetPassword

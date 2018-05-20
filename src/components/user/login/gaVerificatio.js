@@ -38,25 +38,31 @@ class Verification extends React.Component {
 	render() {
 		return (
 			<div className='verification'>
-				<div className="verification-box">
-					<div className="verification-title">GA Verification</div>
-					<div className={this.state.findpwdstatus}>
-						<span className={this.state.findpwdNameclass}>GA Verification</span>
-						<input 
-							type="text" 
-							name="nsername"
+					<div className="verification-title">
+						<h5>GA Verification</h5>
+					</div>
+					<div className="verification-box">
+						<div className={this.state.findpwdstatus}>
+							<span className={this.state.findpwdNameclass}>GA Verification</span>
+							<input type="text"
+							name="username"
 							value={this.state.findpwd}
 							onChange={this.handlefindpwdChange}
 							onFocus={this.handlefindpwdFocus}
 							onBlur={this.handlefindpwdBlur}
-							placeholder="GA Verification" 
-						className="verification-input"/>
+							placeholder="Email"
+							className="verification-input"/>
+						</div>
 					</div>
-					<button 
-					className={this.state.findpwd?'verification-btn verification-btn-success':'verification-btn'}
-					>Confirm</button>
-				</div>
+					<div className="btn-box">
+						<button
+						className={this.state.findpwd?'btn-cont btn-success':'btn-cont'}
+						>
+							Confirm
+						</button>
+					</div>
 			</div>
+			
 		)
 	}
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import './user.less'
 
-class Verification extends React.Component {
+class FindpwdPassword extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -61,7 +61,7 @@ class Verification extends React.Component {
 						<button
 						className={this.state.email?'btn-cont btn-success':'btn-cont'}
 						>
-							Confirm
+							Reset password
 						</button>
 					</div>
 	
@@ -71,4 +71,4 @@ class Verification extends React.Component {
 		)
 	}
 }
-export default Verification
+export default FindpwdPassword

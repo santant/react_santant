@@ -4,7 +4,7 @@ import {
 } from 'antd-mobile';
 import './user.less'
 
-class Verification extends React.Component {
+class EmaillVerification extends React.Component {
 	constructor(props) {
 		super(props);
 	}
@@ -30,4 +30,4 @@ class Verification extends React.Component {
 			)
 	}
 }
-export default Verification
+export default EmaillVerification

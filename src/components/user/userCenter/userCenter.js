@@ -1,9 +1,24 @@
 import React from 'react'
 import HanderNav from '../../index/handerNav'
-import {Icon} from 'antd-mobile';
+import {Icon} from 'antd-mobile'
 import './usercenters.less'
 
 class UserCenter extends React.Component {
+    submit() {
+        alert('1')
+    }
+
+    state = {
+        modelFixed: false // 遮照是否隐藏
+    }
+
+    modelFixedChange() { // 隐藏显示遮照
+        this.setState({
+            modelFixed: !this.state.modelFixed
+        })
+    }
+
+
     render() {
         return (
             <div id='userCenter'>
@@ -17,7 +32,7 @@ class UserCenter extends React.Component {
                     <p className='userAddress'><i className='iconfont'>&#xe61f;</i> Recent landing time：2018-03-08
                         IP：162.219.122.32</p>
                 </div>
-                <ul className='item_group'>
+                <ul onClick={this.modelFixedChange.bind(this)} className='item_group'>
                     <li>
                         <img src={require('./image/rezheng01.png')} alt=""/>
                         <span className='item_center'>Sign In Password</span>
@@ -35,25 +50,32 @@ class UserCenter extends React.Component {
                     </li>
                 </ul>
                 <ol className='addrss_ip_list'>
-                   <li>
-                       <span>IP:162.219.122.32（ <i className='iconfont'>&#xe61f;</i>Los Angeles United States）</span>
-                       <p>2018-01-23  15:52:03   Login success</p>
-                   </li>
                     <li>
                         <span>IP:162.219.122.32（ <i className='iconfont'>&#xe61f;</i>Los Angeles United States）</span>
-                        <p>2018-01-23  15:52:03   Login success</p>
+                        <p>2018-01-23 15:52:03 Login success</p>
                     </li>
                     <li>
                         <span>IP:162.219.122.32（ <i className='iconfont'>&#xe61f;</i>Los Angeles United States）</span>
-                        <p>2018-01-23  15:52:03   Login success</p>
+                        <p>2018-01-23 15:52:03 Login success</p>
                     </li>
                     <li>
                         <span>IP:162.219.122.32（ <i className='iconfont'>&#xe61f;</i>Los Angeles United States）</span>
-                        <p>2018-01-23  15:52:03   Login success</p>
+                        <p>2018-01-23 15:52:03 Login success</p>
+                    </li>
+                    <li>
+                        <span>IP:162.219.122.32（ <i className='iconfont'>&#xe61f;</i>Los Angeles United States）</span>
+                        <p>2018-01-23 15:52:03 Login success</p>
                     </li>
                 </ol>
-                <div className='modelFixed'>
-
+                <div className={
+                    !this.state.modelFixed ? 'modelFixed modelFixedHide' : 'modelFixed'
+                }>
+                    <div className='Fixed_box'>
+                        <Icon  onClick={this.modelFixedChange.bind(this)}  className='close' type="cross"/>
+                        <img src={require('./image/rezheng01_max.png')} alt=""/>
+                        <p>请前往Fcoin官网完成高级认证</p>
+                        <div className='submit'>Submit</div>
+                    </div>
                 </div>
             </div>
         )
