@@ -2,6 +2,9 @@ import React from 'react'
 import './addressList.less'
 
 class AddressList extends React.Component {
+    openChange(){
+        // alert('1')
+    }
     render() {
         return (
             <div id='addressList'>
@@ -10,7 +13,7 @@ class AddressList extends React.Component {
                 </div>
                 <dl className='address_box'>
                     <dd className='address_item'><span>USDT</span> <span className='next-list'>1
-                        <img src={require('./image/top.png')} alt=""/>
+                        <img  onClick={this.openChange.bind(this)} src={require('./image/top.png')} alt=""/>
                     </span></dd>
                     <dt className='address_msg'>
                         <div className='key_msg_box'>
