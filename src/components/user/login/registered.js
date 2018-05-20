@@ -132,13 +132,13 @@ class Registered extends React.Component {
 			}
 			if (emailReg.test(this.state.email)) {
 				this.setState({
-					emailclass: 'login-regular-active',
+					emailclass: 'regular-active',
 					emailstatus: 'check-success',
 					checkemail: 'wrong wrong-hide'
 				})
 			} else {
 				this.setState({
-					emailclass: 'login-regular-wrong',
+					emailclass: 'regular-wrong',
 					emailstatus: 'check-wrong',
 					checkemail: 'wrong wrong-show'
 				})

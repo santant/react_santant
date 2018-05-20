@@ -32,6 +32,8 @@ import FindpwdPassword from './user/login/forgotPassword'
 import ResetPassword from './user/login/resetPassword'
 import EmaillVerification from './user/login/emaillVerification'
 import EditorPassword from './user/personal/editorPassword'
+import Addaddress from './currency/addaddress'
+import MentionMoney from './currency/mentionMoney'
 import 'antd-mobile/dist/antd-mobile.css'
 import '../assets/css/animate.min.css'
 import '../assets/font/iconfont.css'
@@ -56,6 +58,7 @@ export default (
             <BrowserRouter>
                 <div className='appRouter ov_hidden'>
                     <Header></Header>
+                    <div className="container">
                     <Switch>
                         <Route path="/home" component={Home}/>
                         <Route path="/login-state" component={LoginState}/>
@@ -78,7 +81,10 @@ export default (
                         <Route path="/resetPassword" component={ResetPassword}/>
                         <Route path="/emaillVerification" component={EmaillVerification}/>
                         <Route path="/editorPassword" component={EditorPassword}/>
+                        <Route path="/addaddress" component={Addaddress}/>
+                        <Route path="/mentionMoney" component={MentionMoney}/>
                     </Switch>
+                </div>
                 </div>
             </BrowserRouter>
         </CSSTransition>

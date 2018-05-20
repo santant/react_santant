@@ -87,7 +87,7 @@
             }
             .regular-wrong {
                 opacity: 1;
-                color: #ff5353;
+                color: @wrongColor;
             }
             .personal-input-box {
                 position: relative;
@@ -156,8 +156,8 @@
             .wrong {
                 height: 80*@r;
                 line-height: 80*@r;
-                border: 2*@r solid #ff5353;
-                color: #ff5353;
+                border: 2*@r solid @wrongColor;
+                color: @wrongColor;
                 text-indent: 15*@r;
             }
             .wrong-show {
@@ -171,7 +171,7 @@
             border-bottom: 4*@r solid #00b07c !important;
         }
         .check-wrong {
-            border-bottom: 4*@r solid #ff5353 !important;
+            border-bottom: 4*@r solid @wrongColor !important;
         }
     }
     .verify-box {
@@ -375,7 +375,7 @@
             border-bottom: 4*@r solid #00b07c;
         }
         .verification-check-wrong {
-            border-bottom: 4*@r solid #ff5353;
+            border-bottom: 4*@r solid @wrongColor;
         }
     }
     .btn-box {
@@ -405,30 +405,29 @@
             background: #00b07c;
         }
     }
-    .email-addr{
+    .email-addr {
         width: 100%;
-            height: auto;
-            display: block;
-            overflow: hidden;
-            font-size: 40*@r;
-
-            text-align: justify;
-            font-weight: bold;
-            margin: 40*@r 0;
-            color: #415e6d;
+        height: auto;
+        display: block;
+        overflow: hidden;
+        font-size: 40*@r;
+        text-align: justify;
+        font-weight: bold;
+        margin: 40*@r 0;
+        color: #415e6d;
     }
-    .receiveno{
+    .receiveno {
         width: 100%;
-            height: auto;
-            display: block;
-            overflow: hidden;
-            font-size: 24*@r;
-            line-height: 30*@r;
-            text-align: justify;
-            color: #7291a1;
-            a{
-           color: #00b07c;
-       }
+        height: auto;
+        display: block;
+        overflow: hidden;
+        font-size: 24*@r;
+        line-height: 30*@r;
+        text-align: justify;
+        color: #7291a1;
+        a {
+            color: #00b07c;
+        }
     }
     .verification-footer {
         position: absolute;
@@ -442,20 +441,18 @@
         box-sizing: border-box;
         margin-bottom: 80*@r;
         color: #a0aeb6;
-       a{
-           color: #00b07c;
-       }
+        a {
+            color: #00b07c;
+        }
         .dec-title {
             width: 100%;
             height: auto;
             display: block;
             overflow: hidden;
             margin-bottom: 40*@r;
-            .am-icon-md {
-                width: 14px;
-                height: 14px;
-                vertical-align: top;
-                padding-right: 10*@r;
+            .iconright {
+                font-size: 20*@r;
+                padding-right: 6*@r;
             }
         }
         p {

@@ -20,7 +20,8 @@ class Verification extends React.Component {
 				<span className="receiveno">Did not receive it?<a href="javascript:;">Re - send Mail</a></span>
 				
 				<div className="verification-footer">
-					<span className='dec-title'> <Icon  type='cross-circle'/>If you haven't received the email, do the following:</span>
+					<span className='dec-title'> 	<i className='iconfont iconright'>&#xe60f;
+    </i>If you haven't received the email, do the following:</span>
 					<p>• Ensure that the email address provided is correct.Please try to find in spam or other folders.</p>
 					<p>• Aet up a white list of email addresses and a white list of domain names. <a href="javascript:;"> How to set up?</a></p>
 					<p>• Check the mail client to receive and receive normal.</p>

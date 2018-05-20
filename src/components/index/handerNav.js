@@ -1,12 +1,15 @@
 import React from 'react'
 
 class handerNav extends React.Component {
+	constructor(props) {
+		super(props);
+	}
 
     bindClick(){
         this.props.msg()
     }
     render() {
-        console.log(this.props)
+        let titleName=this.props.title?this.props.title:'';
         return (
             <div id='handerNav'>
                 <div className='back_currency'>
@@ -16,7 +19,7 @@ class handerNav extends React.Component {
                         {
                             this.props.isLeft ? <i className='iconfont'>&#xe625;</i> : ''
                         }
-                        {this.props.titleName}
+                        {titleName}
                         {
                             this.props.address ?
                                 <img className='address_url' src={require('../../assets/images/addressList.png')}
