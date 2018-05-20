@@ -3,7 +3,9 @@ import React from 'react'
 class handerNav extends React.Component {
 
     bindClick(){
-        this.props.msg()
+        if(this.props.msg){
+            this.props.msg()
+        }
     }
     render() {
         console.log(this.props)
