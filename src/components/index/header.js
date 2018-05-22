@@ -4,7 +4,8 @@ import  axios from 'axios'
 class SantantHeader extends React.Component {
     login_s(){
         axios.post('https://uc-api-sandbox.fcoin.com/users/v1/dev/login', {
-            email:'huobijiang2@163.com',
+
+            email:'huobili2@163.com',
             password: '1234@Qwer'
         })
             .then(function (response) {
