@@ -3,11 +3,22 @@ import HanderNav from '../index/handerNav'
 import './currency.less'
 
 class currencyMagess extends React.Component {
+    constructor(props){
+        super(props)
+        this.state={
+            detailData:props.history.location.state.parma?this.props.history.location.state.parma:{currency:'',available:'',frozen:''}
+
+        }
+    }
+
+    handleCurrencyRecharge=()=>{
+        this.props.history.push('/CurrencyRecharge')
+    }
 
     render() {
         return (
             <div id='currencyMagess'>
-                <HanderNav isLeft titleName='BHC' address></HanderNav>
+                <HanderNav isLeft titleName={this.state.detailData.currency} address></HanderNav>
                 <div className="price">
                     <span className="Value">Estimated Value</span>
                     <span className="btc">15.10768112 BTC</span>
@@ -17,15 +28,15 @@ class currencyMagess extends React.Component {
                     <ul>
                         <li>
                             <span>可用</span>
-                            <p>0.103777347</p>
+                            <p>{this.state.detailData.available}</p>
                         </li>
                         <li>
                             <span>冻结</span>
-                            <p>0.2877347</p>
+                            <p>{this.state.detailData.frozen}</p>
                         </li>
                     </ul>
                     <div className='btn_box'>
-                        <div>Deposit</div>
+                        <div onClick={this.handleCurrencyRecharge}>Deposit</div>
                         <div>Withdraw</div>
                     </div>
                 </div>
