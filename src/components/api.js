@@ -7,6 +7,7 @@ const LOGIN = 'https://uc-api-sandbox.fcoin.com/users/v1/dev/login'
 // const LOGIN='https://ex-api-sandbox.fcoin.com/web/v1/dev/login'
 const REGISTERED = `${HSOT}users/v1/register`;
 const GET_ASSETS=`${HSOT2}api/web/v1/accounts/balance`;
+const ADD_ADDRESS=`${HSOT2}api/web/v1/accounts/withdraws/addresses`;
 
 axios.defaults.retry = 0;
 axios.defaults.retryDelay = 1000;
@@ -16,7 +17,7 @@ const URL = 'http://beta.artup.com/artup-build/builder/sku.do?format=json&ignore
 axios.interceptors.request.use(config => {
     let userTocken = sessionStorage.getItem('token') || '';
     config.headers['Content-Type'] = 'application/json';
-    // config.headers.Authorization = userTocken;
+    config.headers.token = userTocken;
     // config.headers.cache = false;
     return config
 }, error => {
@@ -60,7 +61,9 @@ axios.interceptors.response.use(function (data) {
 });
 
 export default {
-    logoin: (data) => {
+    add_address: (data) => {
+        return axios.post(ADD_ADDRESS, data)
+    },logoin: (data) => {
         return axios.post(LOGIN, data)
     },
     registered: (data) => {
