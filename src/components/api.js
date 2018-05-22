@@ -1,9 +1,12 @@
 import axios from 'axios'
 import qs from 'qs'
 
-const HSOT = 'https://exchange-sandbox.fcoin.com/api/'
+const HSOT = 'https://uc-api-sandbox.fcoin.com/'
+const HSOT2='https://exchange-sandbox.fcoin.com/';
 const LOGIN = 'https://uc-api-sandbox.fcoin.com/users/v1/dev/login'
 // const LOGIN='https://ex-api-sandbox.fcoin.com/web/v1/dev/login'
+const REGISTERED = `${HSOT}users/v1/register`;
+const GET_ASSETS=`${HSOT2}api/web/v1/accounts/balance`;
 
 axios.defaults.retry = 0;
 axios.defaults.retryDelay = 1000;
@@ -17,7 +20,7 @@ axios.interceptors.request.use(config => {
     // config.headers.cache = false;
     return config
 }, error => {
-    alert('加载超时')
+    // alert('加载超时')
 
     return Promise.reject(error)
 });
@@ -27,7 +30,7 @@ axios.interceptors.response.use(function (data) {
 }, function axiosRetryInterceptor(err) {
     console.log('ssss=', err)
     var config = err.config;
-    alert('加载失败')
+    // alert('加载失败')
     // 设置变量以跟踪重试计数 如果配置不存在，或者重试选项没有设置，则拒绝
     if (!config || !config.retry) return Promise.reject(err);
 
@@ -59,6 +62,15 @@ axios.interceptors.response.use(function (data) {
 export default {
     logoin: (data) => {
         return axios.post(LOGIN, data)
+    },
+    registered: (data) => {
+        return axios.post(REGISTERED, data)
+    },
+    assets:{
+        get_assets:(data)=>{
+            return axios.get(GET_ASSETS, data)
+        }
     }
+
 
 }

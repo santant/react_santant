@@ -1,8 +1,16 @@
 import React from 'react'
-
+import ServerApi from './../api'
 import { Icon, Checkbox} from 'antd-mobile';
 import './assetslist.less'
 class Assets extends React.Component {
+    constructor(props){
+        super(props)
+    }
+    componentDidMount = () => {
+        ServerApi.assets.get_assets(null).then(res=>{
+            console.log('assets',res)
+        })
+    }
     render() {
         return (
             <div id='assets'>

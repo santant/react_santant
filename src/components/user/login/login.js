@@ -92,7 +92,7 @@ class Login extends React.Component {
 
     }
     componentDidMount = async () => {
-        // ServerApi.logoin(null);
+        sessionStorage.clear();
     }
     handleLogin = () => {
         let submitData = {
@@ -101,16 +101,15 @@ class Login extends React.Component {
         }
         ServerApi.logoin(submitData).then(res => {
             let result=res.data;
-            sessionStorage.setItem('token', result.data);
-            console.log('====',this.context)
-            // this.context.router.push('/findpwdPassword');
+            if(result.data){
+                sessionStorage.setItem('token', result.data);
+                this.props.history.push('/assets')
+            }
         });
     }
 
     jupmFinduserName = () => {
-        // this.context.router.history.push('/chat')
         this.props.history.push('/findpwdPassword')
-        console.log('===',this.props)
     }
 
     render() {
