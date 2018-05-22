@@ -8,15 +8,11 @@ const LOGIN = 'https://uc-api-sandbox.fcoin.com/users/v1/dev/login'
 const REGISTERED = `${HSOT}users/v1/register`;
 //资产中心
 const GET_ASSETS=`${HSOT2}api/web/v1/accounts/balance`;
-<<<<<<< HEAD
-const ADD_ADDRESS=`${HSOT2}api/web/v1/accounts/withdraws/addresses`;
-=======
 //币种充值
 const CurrencyRecharge=`${HSOT2}api/web/v1/accounts/deposits/address?currency=ft`;
 
 //获取地址列表
 const GET_ADDRESSLIST=`${HSOT2}api/web/v1/accounts/withdraws/addresses?currency=ft`;
->>>>>>> 50530488233f7a90bede9573195c9e3a13c4d9b1
 
 axios.defaults.retry = 0;
 axios.defaults.retryDelay = 1000;
@@ -71,9 +67,7 @@ axios.interceptors.response.use(function (data) {
 });
 
 export default {
-    add_address: (data) => {
-        return axios.post(ADD_ADDRESS, data)
-    },logoin: (data) => {
+    logoin: (data) => {
         return axios.post(LOGIN, data)
     },
     registered: (data) => {

@@ -1,15 +1,9 @@
 import React from 'react'
-<<<<<<< HEAD
-
-import { Icon, Checkbox} from 'antd-mobile';
-=======
 import ServerApi from './../api'
 import {Icon, Checkbox} from 'antd-mobile';
->>>>>>> 50530488233f7a90bede9573195c9e3a13c4d9b1
 import './assetslist.less'
+
 class Assets extends React.Component {
-<<<<<<< HEAD
-=======
     constructor(props) {
         super(props)
         this.state = {
@@ -44,24 +38,15 @@ class Assets extends React.Component {
         this.props.history.push('/addressList')
     }
 
->>>>>>> 50530488233f7a90bede9573195c9e3a13c4d9b1
     render() {
         let {listData} = this.state;
         return (
             <div id='assets'>
-<<<<<<< HEAD
-               <div className='titleName'>
-                   <span>ASSETS</span>
-                   <img src={require('./image/pieChart.png')} alt=""/>
-                   <img  className='img_address' src={require('./image/addressList.png')} alt=""/>
-               </div>
-=======
                 <div className='titleName'>
                     <span>ASSETS</span>
                     <img src={require('./image/pieChart.png')} alt=""/>
                     <img onClick={this.handleAddressList}  className='img_address' src={require('./image/addressList.png')} alt=""/>
                 </div>
->>>>>>> 50530488233f7a90bede9573195c9e3a13c4d9b1
                 <div className='price'>
                     <span className='Value'>Estimated Value</span>
                     <span className='btc'>15.10768112 BTC</span>
@@ -72,7 +57,7 @@ class Assets extends React.Component {
                         <dd className='title-search'>
                             <Checkbox></Checkbox>
                             <span>Hide 0 Balances</span>
-                            <Icon className='search' type="search" />
+                            <Icon className='search' type="search"/>
                         </dd>
                         <dt className='price-title'>
                             <span className="title">Coin</span>
