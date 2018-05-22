@@ -6,7 +6,13 @@ const HSOT2='https://exchange-sandbox.fcoin.com/';
 const LOGIN = 'https://uc-api-sandbox.fcoin.com/users/v1/dev/login'
 // const LOGIN='https://ex-api-sandbox.fcoin.com/web/v1/dev/login'
 const REGISTERED = `${HSOT}users/v1/register`;
+//资产中心
 const GET_ASSETS=`${HSOT2}api/web/v1/accounts/balance`;
+//币种充值
+const CurrencyRecharge=`${HSOT2}api/web/v1/accounts/deposits/address?currency=ft`;
+
+//获取地址列表
+const GET_ADDRESSLIST=`${HSOT2}api/web/v1/accounts/withdraws/addresses?currency=ft`;
 
 axios.defaults.retry = 0;
 axios.defaults.retryDelay = 1000;
@@ -14,9 +20,10 @@ axios.defaults.timeout = 500000;
 var loadinginstace
 const URL = 'http://beta.artup.com/artup-build/builder/sku.do?format=json&ignore=true&client=pc&category=xiaoshiguang&parameter=xiaoshiguang.xiaoshiguang.blue.170X235.32'
 axios.interceptors.request.use(config => {
+    console.log('sessionStorage',sessionStorage.getItem('token'));
     let userTocken = sessionStorage.getItem('token') || '';
     config.headers['Content-Type'] = 'application/json';
-    // config.headers.Authorization = userTocken;
+    config.headers.token = userTocken;
     // config.headers.cache = false;
     return config
 }, error => {
@@ -69,7 +76,17 @@ export default {
     assets:{
         get_assets:(data)=>{
             return axios.get(GET_ASSETS, data)
-        }
+        },
+        //币种充值
+        CurrencyRecharge:(data)=>{
+            return axios.get(CurrencyRecharge, data)
+        },
+    },
+    addresses:{
+        //获取地址列表
+        get_addresses:(data)=>{
+            return axios.get(GET_ADDRESSLIST, data)
+        },
     }
 
 

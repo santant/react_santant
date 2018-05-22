@@ -1,8 +1,35 @@
 import React from 'react'
 import './addressList.less'
+import ServerApi from "../../api";
 
 class AddressList extends React.Component {
-    openChange(){
+    constructor(props) {
+        super(props)
+        this.state = {
+            listData: null
+        }
+    }
+
+    componentDidMount() {
+        ServerApi.addresses.get_addresses(null).then(res => {
+            let result = res.data.data;
+            console.log('====',res)
+            // if (result && result.length > 0) {
+            //     let resultData = [];
+            //     for (let i = 0, len = result.length; i < len; i++) {
+            //         resultData.push({
+            //             'currency': result[i].currency,
+            //             'available': Number(result[i].available).toFixed(6),
+            //             'frozen': Number(result[i].frozen).toFixed(6)
+            //         });
+            //     }
+            //     this.setState({
+            //         listData: resultData
+            //     })
+            // }
+        })
+    }
+    openChange=()=>{
         // alert('1')
     }
     render() {

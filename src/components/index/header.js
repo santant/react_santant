@@ -3,7 +3,6 @@ import logoURL from './../../assets/images/logo.png';
 import  axios from 'axios'
 class SantantHeader extends React.Component {
     login_s(){
-        alert('1')
         axios.post('https://uc-api-sandbox.fcoin.com/users/v1/dev/login', {
             email:'huobili1@163.com',
             password: '1234@Qwer'

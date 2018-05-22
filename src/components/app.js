@@ -22,11 +22,11 @@ import Verification from './user/login/verification'  //验证
 import Registered from './user/login/registered' //注册
 import FinanceHistory from './financeHistory/financeHistory' //财务历史记录界面
 import LoginState from './loginState/loginState' // 登录状态
-import AddressList from './address/addressList/addressList' // 地址列表
-import Assets from './assets/assets' // 资产中心
+import AddressList from './address/addressList/addressList' // 地址列表*
+import Assets from './assets/assets' // 资产中心*
 import CurrencySearch from './currency/currencySearch' // 币种search
-import CurrencyMagess from './currency/currencyMagess' // 币种search详情
-import CurrencyRecharge from './currency/CurrencyRecharge' // 币种充值
+import CurrencyMagess from './currency/currencyMagess' // 币种search详情*
+import CurrencyRecharge from './currency/CurrencyRecharge' // 币种充值*
 import CurrentEntrust from './entrust/currentEntrust' // 当前委托(委托筛选等全部界面)
 import EntrustDeal from './entrust/EntrustDeal' // 部分成交页面
 import UserCenter from './user/userCenter/userCenter' // 个人中心(认证和未认证状态)和高级认证点击提示
