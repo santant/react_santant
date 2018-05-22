@@ -86,7 +86,7 @@ class Login extends React.Component {
         let submitData = {
             captcha: '',
             email: this.state.userName,
-            password: this.state.userName,
+            password: this.state.z,
         }
         ServerApi.logoin(submitData).then(res => {
             console.log('res+++', res)

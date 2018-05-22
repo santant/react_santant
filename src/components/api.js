@@ -1,7 +1,7 @@
 import axios from 'axios'
 import qs from 'qs'
 const HSOT='https://exchange-sandbox.fcoin.com/api/'
-const LOGIN='https://ex-api-sandbox.fcoin.com/web/v1/dev/login'
+const LOGIN='https://uc-api-sandbox.fcoin.com/users/v1/dev/login'
 
 axios.defaults.retry = 0;
 axios.defaults.retryDelay = 1000;
