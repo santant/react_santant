@@ -1,4 +1,7 @@
 import React from 'react'
+import {
+    Link
+} from 'react-router-dom'
 import './loginstate.less'
 
 class LoginState extends React.Component {
@@ -6,7 +9,7 @@ class LoginState extends React.Component {
         return (
             <div id='LoginState' className='LoginState'>
                 <ul className='login_state_group'>
-                  <li>sign in</li>
+                    <li><Link to=''>sign in</Link></li>
                   <li>sign up</li>
                 </ul>
                 <div className='userInfo'>

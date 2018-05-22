@@ -5,6 +5,7 @@ import {
     Route,
     // NavLink,
     HashRouter,
+    Link,
     Switch,
     // IndexRoute
 } from 'react-router-dom'
