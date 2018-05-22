@@ -1,5 +1,6 @@
 import React from 'react'
 import './user.less'
+import ServerApi from './../../api'
 
 class Login extends React.Component {
 		constructor(props) {
@@ -63,6 +64,10 @@ class Login extends React.Component {
 			}
 
 		}
+    componentDidMount= async() => {
+        ServerApi.test(null);
+    }
+
 		render() {
 				return(
                     <div>

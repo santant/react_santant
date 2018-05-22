@@ -11,7 +11,6 @@ class handerNav extends React.Component {
         }
     }
     render() {
-        let titleName=this.props.title?this.props.title:'';
         return (
             <div id='handerNav'>
                 <div className='back_currency'>
@@ -34,6 +33,7 @@ class handerNav extends React.Component {
                 </div>
             </div>
         )
+        let titleName=this.props.title?this.props.title:'';
     }
 }
 

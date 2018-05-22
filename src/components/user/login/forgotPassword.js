@@ -64,7 +64,6 @@ class FindpwdPassword extends React.Component {
 							Reset password
 						</button>
 					</div>
-	
 				</div>
 				<div className = "accoun">Sign up</div>
 			</div>

@@ -1,10 +1,12 @@
 import React from 'react'
+import Serverapi from './api'
 import {
     BrowserRouter,
     Route,
     // NavLink,
     HashRouter,
-    Switch
+    Switch,
+    // IndexRoute
 } from 'react-router-dom'
 import {
     TransitionGroup,
@@ -59,10 +61,12 @@ export default (
                     {/*如果userState=1未登录，=2已登录*/}
                     <Header userState='1'></Header>
                     <Switch>
+                        {/*<IndexRoute component={UserLogin} />*/}
                         <Route path="/login-state" component={LoginState}/>
                         <Route path="/bindingGa" component={BindingGa}/>
                         <Route path="/unBindingGa" component={unBindingGa}/>
-                        <Route path="/login" component={UserLogin}/>
+                        {/*<Route path="/login" component={UserLogin}/>*/}
+                        <Route path="/" component={UserLogin}/>
                         <Route path="/addressList" component={AddressList}/>
                         <Route path="/assets" component={Assets}/>
                         <Route path="/addresserificationcode" component={AddressErificationCode}/>
