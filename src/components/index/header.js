@@ -4,7 +4,7 @@ import  axios from 'axios'
 class SantantHeader extends React.Component {
     login_s(){
         axios.post('https://uc-api-sandbox.fcoin.com/users/v1/dev/login', {
-            email:'huobili1@163.com',
+            email:'huobijiang2@163.com',
             password: '1234@Qwer'
         })
             .then(function (response) {
@@ -19,7 +19,7 @@ class SantantHeader extends React.Component {
         return (
             <div className='santant-header'>
                 <img className="logo" src={logoURL}/>
-                <span onClick={this.login_s.bind(this)}>登录</span>
+                {/*<span onClick={this.login_s.bind(this)}>登录</span>*/}
                 <div className='userState'>
                     <div className='user_title'>
                         {

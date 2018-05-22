@@ -4,6 +4,7 @@ import HanderNav from '../index/handerNav'
 import {Tabs, Badge} from 'antd-mobile';
 import './entrusts.less'
 import {Drawer} from 'antd-mobile'
+import ServerApi from "../api";
 
 const tabs = [
     {title: <Badge>OPEN ORDERS</Badge>},
@@ -11,10 +12,86 @@ const tabs = [
 ]
 
 class currentEntrust extends React.Component {
-    state = {
-        open: false,
-        coin: '',
-        chargeCoin: ''
+    constructor(props) {
+        super(props)
+        this.state = {
+            currentEntrust: [],
+            historyEntrust: [],
+            open: false,
+            coin: '',
+            chargeCoin: '',
+            currentTab: 0
+        }
+    }
+
+    componentDidMount() {
+        //当前委托
+        ServerApi.entrust.get_currentEntrust(null).then(res => {
+            let result = res.data.data;
+            if (result && result.length > 0) {
+                let resultData = [];
+                for (let i = 0, len = result.length; i < len; i++) {
+                    resultData.push({
+                        "id": result[i].id,
+                        "symbol": result[i].symbol,
+                        "amount": Number(result[i].amount).toFixed(6),
+                        "price": Number(result[i].price).toFixed(6),
+                        "created_at": this.timestampToTime(result[i].canceled_at),
+                        "type": result[i].type,
+                        "filled_amount": result[i].filled_amount,
+                        "executed_value": Number(result[i].executed_value).toFixed(6),
+                        "fill_fees": result[i].fill_fees,
+                        "finished_at": result[i].finished_at,
+                        "source": result[i].source,
+                        "state": result[i].state,
+                        "canceled_at": result[i].canceled_at
+                    });
+                }
+                this.setState({
+                    currentEntrust: [...resultData]
+                })
+            }
+        })
+
+        //历史委托
+        ServerApi.entrust.history_entrust(null).then(res => {
+            let result = res.data.data;
+            if (result && result.length > 0) {
+                let resultData = [];
+                for (let i = 0, len = result.length; i < len; i++) {
+                    resultData.push({
+                        "id": result[i].id,
+                        "symbol": result[i].symbol,
+                        "amount": Number(result[i].amount).toFixed(6),
+                        "price": Number(result[i].price).toFixed(6),
+                        "created_at": this.timestampToTime(result[i].canceled_at),
+                        "type": result[i].type,
+                        "filled_amount": result[i].filled_amount,
+                        "executed_value": Number(result[i].executed_value).toFixed(6),
+                        "fill_fees": result[i].fill_fees,
+                        "finished_at": result[i].finished_at,
+                        "source": result[i].source,
+                        "state": result[i].state,
+                        "canceled_at": result[i].canceled_at
+                    });
+                }
+                this.setState({
+                    historyEntrust: [...resultData]
+                })
+            }
+        })
+
+    }
+
+    timestampToTime = (timestamp) => {
+        let date = new Date(timestamp);
+        let Y = date.getFullYear() + '-';
+        let M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+        let D = date.getDate() + ' ';
+        let h = date.getHours() + ':';
+        let m = date.getMinutes() + ':';
+        let s = date.getSeconds();
+        return Y + '/' + M + '/' + D + '   ' + h + m + s;
     }
 
     changeInput1(ev) {
@@ -35,7 +112,14 @@ class currentEntrust extends React.Component {
         this.setState({open: !this.state.open})
     }
 
+    handelChange = (tab, index) => {
+        this.setState({
+            currentTab: index
+        })
+    }
+
     render() {
+        let {currentEntrust, historyEntrust} = this.state;
         const sidebar = (
             <div id='sidebar'>
                 <div className='orderState'>
@@ -90,80 +174,109 @@ class currentEntrust extends React.Component {
                       tabBarBackgroundColor='#2e3d45'
                       tabBarActiveTextColor='#fff'
                       tabBarInactiveTextColor='#7391a1'
-                      onChange={(tab, index) => {
-                          console.log('onChange', index, tab);
-                      }}
-                      onTabClick={(tab, index) => {
-                          console.log('onTabClick', index, tab);
-                      }}
+                      onChange={(tab, index) => this.handelChange(tab, index)}
+                      onTabClick={(tab, index) => this.handelChange(tab, index)}
                 >
                 </Tabs>
-                <ul className='tab_box'>
-                    <li className='item_tab'>
-                        <span><b>Buy</b>SMT/USDT</span>
-                        <span className='time'>28/03/18  18:35:35</span>
-                    </li>
-                    <li className='tab'>
-                        <span>price(SMT)</span>
-                        <span>0.073999</span>
-                    </li>
-                    <li className='tab'>
-                        <span>amount(SMT)</span>
-                        <span>11.173.999</span>
-                    </li>
-                    <li className='tab'>
-                        <span>executed(SMT)</span>
-                        <span>1273.999</span>
-                    </li>
-                    <li className='cancel'>
-                        <span></span>
-                        <span>Cancel</span>
-                    </li>
-                </ul>
-                <ul className='tab_box'>
-                    <li className='item_tab'>
-                        <span><b>Buy</b>SMT/USDT</span>
-                        <span className='time'>28/03/18  18:35:35</span>
-                    </li>
-                    <li className='tab'>
-                        <span>price(SMT)</span>
-                        <span>0.073999</span>
-                    </li>
-                    <li className='tab'>
-                        <span>amount(SMT)</span>
-                        <span>11.173.999</span>
-                    </li>
-                    <li className='tab'>
-                        <span>executed(SMT)</span>
-                        <span>1273.999</span>
-                    </li>
-                    <li className='cancel'>
-                        <span></span>
-                        <span>Cancel</span>
-                    </li>
-                </ul>
-                <ul className='tab_box'>
-                    <li className='item_tab'>
-                        <span><b>Buy</b>SMT/USDT</span>
-                        <span className='time'>28/03/18  18:35:35</span>
-                    </li>
-                    <li className='tab'>
-                        <span>price(SMT)</span>
-                        <span>0.073999</span>
-                    </li>
-                    <li className='tab'>
-                        <span>amount(SMT)</span>
-                        <span>11.173.999</span>
-                    </li>
-                    <li className='tab'>
-                        <span>executed(SMT)</span>
-                        <span>1273.999</span>
-                    </li>
-                    <li className='cancel'>
-                        <span></span>
-                        <span>Cancel</span>
-                    </li>
-                </ul>
+                {currentEntrust && currentEntrust.length > 0 ? currentEntrust.map((item, index) =>
+                    <ul className='tab_box' key={index}
+                        style={{display: this.state.currentTab === 0 ? 'block' : 'none'}}>
+                        <li className='item_tab'>
+                            <span><b>{item.type}</b>{item.price}</span>
+                            <span className='time'>{item.created_at}</span>
+                        </li>
+                        <li className='tab'>
+                            <span>price(SMT)</span>
+                            <span>{item.price}</span>
+                        </li>
+                        <li className='tab'>
+                            <span>amount(SMT)</span>
+                            <span>{item.amount}</span>
+                        </li>
+                        <li className='tab'>
+                            <span>executed(SMT)</span>
+                            <span>{item.executed_value}</span>
+                        </li>
+                        <li className='cancel'>
+                            <span></span>
+                            <span>Cancel</span>
+                        </li>
+                    </ul>
+                ) : ''}
+
+                {
+                    historyEntrust && historyEntrust.length > 0 ? historyEntrust.map((item, index) =>
+                        <ul className='tab_box' key={index}
+                            style={{display: this.state.currentTab === 1 ? 'block' : 'none'}}>
+                            <li className='item_tab'>
+                                <span><b>{item.type}</b>{item.price}</span>
+                                <span className='time'>{item.created_at}</span>
+                            </li>
+                            <li className='tab'>
+                                <span>price(SMT)</span>
+                                <span>{item.price}</span>
+                            </li>
+                            <li className='tab'>
+                                <span>amount(SMT)</span>
+                                <span>{item.amount}</span>
+                            </li>
+                            <li className='tab'>
+                                <span>executed(SMT)</span>
+                                <span>{item.executed_value}</span>
+                            </li>
+                            <li className='cancel'>
+                                <span></span>
+                                <span>Cancel</span>
+                            </li>
+                        </ul>
+                    ) : ''
+                }
+
+
+                {/*<ul className='tab_box'>*/}
+                {/*<li className='item_tab'>*/}
+                {/*<span><b>Buy</b>SMT/USDT</span>*/}
+                {/*<span className='time'>28/03/18  18:35:35</span>*/}
+                {/*</li>*/}
+                {/*<li className='tab'>*/}
+                {/*<span>price(SMT)</span>*/}
+                {/*<span>0.073999</span>*/}
+                {/*</li>*/}
+                {/*<li className='tab'>*/}
+                {/*<span>amount(SMT)</span>*/}
+                {/*<span>11.173.999</span>*/}
+                {/*</li>*/}
+                {/*<li className='tab'>*/}
+                {/*<span>executed(SMT)</span>*/}
+                {/*<span>1273.999</span>*/}
+                {/*</li>*/}
+                {/*<li className='cancel'>*/}
+                {/*<span></span>*/}
+                {/*<span>Cancel</span>*/}
+                {/*</li>*/}
+                {/*</ul>*/}
+                {/*<ul className='tab_box'>*/}
+                {/*<li className='item_tab'>*/}
+                {/*<span><b>Buy</b>SMT/USDT</span>*/}
+                {/*<span className='time'>28/03/18  18:35:35</span>*/}
+                {/*</li>*/}
+                {/*<li className='tab'>*/}
+                {/*<span>price(SMT)</span>*/}
+                {/*<span>0.073999</span>*/}
+                {/*</li>*/}
+                {/*<li className='tab'>*/}
+                {/*<span>amount(SMT)</span>*/}
+                {/*<span>11.173.999</span>*/}
+                {/*</li>*/}
+                {/*<li className='tab'>*/}
+                {/*<span>executed(SMT)</span>*/}
+                {/*<span>1273.999</span>*/}
+                {/*</li>*/}
+                {/*<li className='cancel'>*/}
+                {/*<span></span>*/}
+                {/*<span>Cancel</span>*/}
+                {/*</li>*/}
+                {/*</ul>*/}
                 <Drawer
                     className={
                         this.state.open ? 'my-drawer dis' : 'my-drawer'
