@@ -10,7 +10,6 @@ class Assets extends React.Component {
             listData: null
         }
     }
-
     componentDidMount() {
         ServerApi.assets.get_assets(null).then(res => {
             let result = res.data.data;
