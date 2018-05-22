@@ -1,19 +1,23 @@
-import React from 'react'
+import React,{context} from 'react'
 import './user.less'
 import ServerApi from './../../api'
+import {Link,browserHistory} from 'react-router-dom'
+import PropTypes from 'prop-types';
 
 class Login extends React.Component {
-    constructor(props) {
-        super(props);
+    constructor(props,context) {
+        super(props,context);
+        this.context.router;
         this.state = {
             userName: '',
             password: '',
             //校验信息默认不加样式，成功加【'check-success'】，错误加【'check-wrong'】
             userNamestatus: '',
-            checkUserName: 'wrong wrong-hide',
-            passwordstatue: '',
+            passwordstatus: '',
             userNameclass: 'regular-none',
-            passwordstatus: 'regular-none',
+            passwordclass: 'regular-none',
+            checkUserName: 'wrong wrong-hide',
+            checkPassword: 'wrong wrong-hide'
         };
     }
 
@@ -59,22 +63,30 @@ class Login extends React.Component {
     handlePasswordChange = (event) => {
         this.setState({
             password: event.target.value,
-            passwordstatus: 'regular-active',
+            passwordstatus: '',
+            passwordclass: 'regular-active',
+            checkPassword: 'wrong wrong-hide'
         })
     }
     handlePasswordFocus = (event) => {
         this.setState({
-            passwordstatus: 'regular-default',
+            passwordclass: 'regular-default',
+            passwordstatus: '',
+            checkPassword: 'wrong wrong-hide'
         })
     }
     handlePasswordBlur = (event) => {
         if (!this.state.password) {
             this.setState({
-                passwordstatus: 'regular-default',
+                passwordclass: 'regular-wrong',
+                passwordstatus: 'check-wrong',
+                checkPassword: 'wrong wrong-show'
             })
         } else {
             this.setState({
-                passwordstatus: 'regular-active',
+                passwordclass: 'regular-active',
+                passwordstatus: 'check-success',
+                checkPassword: 'wrong wrong-hide'
             })
         }
 
@@ -84,13 +96,21 @@ class Login extends React.Component {
     }
     handleLogin = () => {
         let submitData = {
-            captcha: '',
-            email: this.state.userName,
-            password: this.state.userName,
+            'email': this.state.userName.toString(),
+            'password': this.state.password.toString(),
         }
         ServerApi.logoin(submitData).then(res => {
-            console.log('res+++', res)
+            let result=res.data;
+            sessionStorage.setItem('token', result.data);
+            console.log('====',this.context)
+            // this.context.router.push('/findpwdPassword');
         });
+    }
+
+    jupmFinduserName = () => {
+        // this.context.router.history.push('/chat')
+        this.props.history.push('/findpwdPassword')
+        console.log('===',this.props)
     }
 
     render() {
@@ -112,7 +132,7 @@ class Login extends React.Component {
                                        onBlur={this.handleNameBlur}
                                        placeholder="Username or Email"
                                        className="personal-input"/>
-                                <span className="forgot">
+                                <span className="forgot" onClick={this.jupmFinduserName.bind(this)}>
 											Forgot?
 										</span>
                             </div>
@@ -120,8 +140,8 @@ class Login extends React.Component {
 								UserName wrong wrong wrong wrong
 							</span>
                         </li>
-                        <li className={this.state.passwordstatue}>
-                            <span className={this.state.passwordstatus}>Password</span>
+                        <li className={this.state.passwordstatus}>
+                            <span className={this.state.passwordclass}>Password</span>
                             <div className="personal-input-box">
                                 <input type="password"
                                        name="password"
@@ -132,9 +152,9 @@ class Login extends React.Component {
                                        placeholder="Password"
                                        className="personal-input"/>
                             </div>
-                            {/*<span className="wrong">*/}
-                            {/*Password wrong wrong wrong wrong*/}
-                            {/*</span>*/}
+                            <span className={this.state.checkPassword}>
+                            Password wrong wrong wrong wrong
+                            </span>
                         </li>
                     </ul>
                     <div className="verify-box">
@@ -150,7 +170,7 @@ class Login extends React.Component {
                     </div>
                     <div className="btn-box">
                         <button
-                            className={this.state.password && this.state.userName && this.state.email ? 'btn-cont btn-success' : 'btn-cont'}
+                            className={this.state.password && this.state.userName ? 'btn-cont btn-success' : 'btn-cont'}
                             onClick={this.handleLogin}>
                             Sign in
                         </button>

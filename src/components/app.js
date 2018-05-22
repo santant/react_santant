@@ -65,8 +65,8 @@ export default (
                         <Route path="/login-state" component={LoginState}/>
                         <Route path="/bindingGa" component={BindingGa}/>
                         <Route path="/unBindingGa" component={unBindingGa}/>
-                        {/*<Route path="/login" component={UserLogin}/>*/}
-                        <Route path="/" component={UserLogin}/>
+                        <Route path="/login" component={UserLogin}/>
+                        {/*<Route path="/" component={UserLogin}/>*/}
                         <Route path="/addressList" component={AddressList}/>
                         <Route path="/assets" component={Assets}/>
                         <Route path="/addresserificationcode" component={AddressErificationCode}/>
