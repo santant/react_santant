@@ -59,35 +59,36 @@ export default (
             <BrowserRouter>
                 <div className='appRouter ov_hidden'>
                     <div className="container">
-                        {/*如果userState=1未登录，=2已登录*/}
-                        <Header userState='1'></Header>
-                        <Switch>
-                            {/*<IndexRoute component={UserLogin} />*/}
-                            <Route path="/login-state" component={LoginState}/>
-                            <Route path="/bindingGa" component={BindingGa}/>
-                            <Route path="/unBindingGa" component={unBindingGa}/>
-                            <Route path="/login" component={UserLogin}/>
-                            {/*<Route path="/" component={UserLogin}/>*/}
-                            <Route path="/addressList" component={AddressList}/>
-                            <Route path="/assets" component={Assets}/>
-                            <Route path="/addresserificationcode" component={AddressErificationCode}/>
-                            <Route path="/verification" component={Verification}/>
-                            <Route path="/registered" component={Registered}/>
-                            <Route path="/finance-history" component={FinanceHistory}/>
-                            <Route path="/currencySearch" component={CurrencySearch}/>
-                            <Route path="/currencyMagess" component={CurrencyMagess}/>
-                            <Route path="/currencyRecharge" component={CurrencyRecharge}/>
-                            <Route path="/currentEntrust" component={CurrentEntrust}/>
-                            <Route path="/entrustDeal" component={EntrustDeal}/>
-                            <Route path="/userCenter" component={UserCenter}/>
-                            <Route path="/findpwdPassword" component={FindpwdPassword}/>
-                            <Route path="/resetPassword" component={ResetPassword}/>
-                            <Route path="/emaillVerification" component={EmaillVerification}/>
-                            <Route path="/editorPassword" component={EditorPassword}/>
-                            <Route path="/addaddress" component={Addaddress}/>
-                            <Route path="/mentionMoney" component={MentionMoney}/>
-                        </Switch>
-                    </div>
+                    {/*如果userState=1未登录，=2已登录*/}
+                    <Header userState='1'></Header>
+                    <Switch>
+                        {/*<IndexRoute component={UserLogin} />*/}
+                        <Route path="/login-state" component={LoginState}/>
+                        <Route path="/bindingGa" component={BindingGa}/>
+                        <Route path="/unBindingGa" component={unBindingGa}/>
+                        <Route path="/login" component={UserLogin}/>
+                        {/*<Route path="/" component={UserLogin}/>*/}
+                        <Route path="/addressList" component={AddressList}/>
+                        <Route path="/assets" component={Assets}/>
+                        <Route path="/addresserificationcode" component={AddressErificationCode}/>
+                        <Route path="/verification" component={Verification}/>
+                        <Route path="/registered" component={Registered}/>
+                        <Route path="/finance-history" component={FinanceHistory}/>
+                        <Route path="/currencySearch" component={CurrencySearch}/>
+                        <Route path="/currencyMagess" component={CurrencyMagess}/>
+                        <Route path="/currencyRecharge" component={CurrencyRecharge}/>
+                        <Route path="/currentEntrust" component={CurrentEntrust}/>
+                        <Route path="/entrustDeal" component={EntrustDeal}/>
+                        <Route path="/userCenter" component={UserCenter}/>
+                        <Route path="/findpwdPassword" component={FindpwdPassword}/>
+                        <Route path="/resetPassword" component={ResetPassword}/>
+                        <Route path="/emaillVerification" component={EmaillVerification}/>
+                        <Route path="/editorPassword" component={EditorPassword}/>
+                        <Route path="/addaddress" component={Addaddress}/>
+                        <Route path="/mentionMoney" component={MentionMoney}/>
+                    </Switch>
+                </div>
+>>>>>>> 6b459881fa1710e8c6a8ea7e713f5c6de4ed0df8
                 </div>
             </BrowserRouter>
         </CSSTransition>
