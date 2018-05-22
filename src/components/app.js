@@ -88,7 +88,6 @@ export default (
                         <Route path="/mentionMoney" component={MentionMoney}/>
                     </Switch>
                 </div>
->>>>>>> 6b459881fa1710e8c6a8ea7e713f5c6de4ed0df8
                 </div>
             </BrowserRouter>
         </CSSTransition>
