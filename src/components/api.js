@@ -4,13 +4,10 @@ import qs from 'qs'
 const HSOT = 'https://uc-api-sandbox.fcoin.com/'
 const HSOT2='https://exchange-sandbox.fcoin.com/';
 const LOGIN = 'https://uc-api-sandbox.fcoin.com/users/v1/dev/login'
-<<<<<<< HEAD
 // const LOGIN='https://ex-api-sandbox.fcoin.com/web/v1/dev/login'
 const REGISTERED = `${HSOT}users/v1/register`;
 const GET_ASSETS=`${HSOT2}api/web/v1/accounts/balance`;
 
-=======
->>>>>>> a2b27637de887f62358d43d024d66e2f55b30c53
 axios.defaults.retry = 0;
 axios.defaults.retryDelay = 1000;
 axios.defaults.timeout = 500000;
