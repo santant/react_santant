@@ -1,5 +1,7 @@
 import axios from 'axios'
 import qs from 'qs'
+const HSOT='https://exchange-sandbox.fcoin.com/api/'
+const LOGIN='https://exchange-sandbox.fcoin.com/api/users/v1/login-new'
 
 axios.defaults.retry = 0;
 axios.defaults.retryDelay = 1000;
@@ -51,8 +53,8 @@ axios.interceptors.response.use(function(data) {
 });
 
 export default {
-    test:(data)=>{
-        return axios.post(URL,qs.stringify(data)
+    logoin:(data)=>{
+        return axios.post(LOGIN,qs.stringify(data)
         )
     }
 

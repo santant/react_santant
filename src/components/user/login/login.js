@@ -65,8 +65,18 @@ class Login extends React.Component {
 
 		}
     componentDidMount= async() => {
-        ServerApi.test(null);
+        // ServerApi.logoin(null);
     }
+    handleLogin =()=>{
+			let submitData={
+                captcha:'"03ACgFB9tN84aV3cRjrqSATzjiK9BTUtzxSluFCssjsGSHwBeGstgzMOry0acRYKBCniiY_Abp7PxYnhf-4yEFdjCzTdZju_IJLxfsRF9Rv-NSAFhugMDroVPIrcgbNqQX9SCYYYuKLFBLnzmcRZIaYediekgMNvTSvbnUIceoBwzaZV4bG6w0Ltkh6oVLQfwDN7BH_W3MPU1cDU60MdsxZSaiil9ND-HnidN00tLzqLvGpzQP3fEe7TaDTHW8CzD3TFz-Knbf2QW-5BcP1xDDf-Pm9WzEIs7CVGgX6lPLfDEsJizf_ccpsOKoTXKHXui1oI_8HxXvNbo-I7EWQCxXDuKatqHucHw2AgLtR13IB0lDkYmkIr5by5SAlrE3ksHmlbrKfyZFcA-cR8E76S5WxaK2yWWDj3MpLQ"\n',
+                email:this.state.userName,
+                password:this.state.userName,
+			}
+        ServerApi.logoin(submitData).then(res=>{
+        	console.log('res+++',res)
+		});
+	}
 
 		render() {
 				return(
@@ -104,9 +114,9 @@ class Login extends React.Component {
 										placeholder="Password"
 										className="personal-input"/>
 									</div>
-									<span className="wrong">
-										Password wrong wrong wrong wrong
-									</span>
+									{/*<span className="wrong">*/}
+										{/*Password wrong wrong wrong wrong*/}
+									{/*</span>*/}
 								</li>
 							</ul>
 							<div className="verify-box">
@@ -123,7 +133,7 @@ class Login extends React.Component {
 							<div className="btn-box">
 								<button
 								className={this.state.password&&this.state.userName&&this.state.email?'btn-cont btn-success':'btn-cont'}
-								>
+								 onClick={this.handleLogin}>
 									Sign in
 								</button>
 							</div>
